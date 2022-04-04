@@ -1,0 +1,36 @@
+irun(64): 15.20-s051: (c) Copyright 1995-2018 Cadence Design Systems, Inc.
+TOOL:	irun(64)	15.20-s051: Started on Apr 04, 2022 at 17:55:12 IST
+irun
+	-access +rwc
+	srfftest.v
+file: srfftest.v
+	module worklib.srff:v
+		errors: 0, warnings: 0
+	module worklib.srfftb:v
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		srfftb
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.srff:v <0x7708d572>
+			streams:   4, words:  1408
+		worklib.srfftb:v <0x7fee65d3>
+			streams:   6, words:  4049
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		             Instances  Unique
+		Modules:             2       2
+		Registers:           5       5
+		Scalar wires:        5       -
+		Always blocks:       2       2
+		Initial blocks:      2       2
+		Pseudo assignments:  3       3
+	Writing initial simulation snapshot: worklib.srfftb:v
+Loading snapshot worklib.srfftb:v .................... Done
+ncsim> source /cad_area/install/INCISIVE152/tools/inca/files/ncsimrc
+ncsim> run
+s=1 r=1 clk=0 q=0 qbar=1
+TOOL:	irun(64)	15.20-s051: Exiting on Apr 04, 2022 at 17:55:54 IST  (total: 00:00:42)

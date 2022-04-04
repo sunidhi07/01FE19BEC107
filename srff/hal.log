@@ -1,0 +1,288 @@
+hal(64): 15.20-s051: (c) Copyright 1995-2018 Cadence Design Systems, Inc.
+hal: Options:   -cdslib /home/adld25/01fe19bec096/srff/cds.lib -logfile hal.log worklib.srfftb:module.
+hal: Snapshot:  worklib.srfftb:module.
+hal: Workspace: /home/adld25/01fe19bec096/srff.
+hal: Date: Mon Apr 04 17:57:50 IST 2022.
+
+hal: Running on elaborated SNAPSHOT.....
+
+  ==========================================================================
+Performing lint checks 
+
+halcheck(64): 15.20-s051: (c) Copyright 1995-2018 Cadence Design Systems, Inc.
+visadev(64): 15.20-s051: (c) Copyright 1995-2018 Cadence Design Systems, Inc.
+`include "srff.v"
+|
+halcheck: *N,CDNOTE (./srfftest.v,2|0): The compiler directive '`include' is used in the RTL.
+module srfftb();
+|
+halcheck: *W,DIFFMN (./srfftest.v,3|0): Module name 'srfftb' differs from file name 'srfftest.v'.
+module srfftb();
+|
+halcheck: *W,NEEDIO (./srfftest.v,3|0): Top-level module 'srfftb' has no inputs/outputs/inouts.
+reg s,r,clk=0;
+|
+halcheck: *E,RTLINI (./srfftest.v,5|0): A variable/signal 'clk' in an RTL description is initialized in its declaration.
+always #15 clk=~clk;
+|
+halcheck: *W,EVTRIG (./srfftest.v,7|0): Always block with no event trigger at the start of the block in module 'srfftb'.
+always #15 clk=~clk;
+|
+halcheck: *W,NBGEND (./srfftest.v,7|0): Missing begin/end statement in the 'always' block.
+always #15 clk=~clk;
+|
+halcheck: *W,SEPLIN (./srfftest.v,7|0): Use a separate line for each HDL statement.
+always #15 clk=~clk;
+|
+halcheck: *W,RDBFAS (./srfftest.v,7|0): Register 'clk', assigned using blocking assignment, is being read before getting assigned.
+initial begin
+|
+halcheck: *W,NOBLKN (./srfftest.v,10|0): Each block should be labeled with a meaningful name.
+s=0;
+|
+halcheck: *W,IMPDTC (./srfftest.v,12|0): Expression '0' implicitly converted to type 'unsigned' from type 'signed' in module/design-unit srfftb.
+s=0;
+|
+halcheck: *W,INTTOB (./srfftest.v,12|0): Assigning a 0 or 1 (32 bits) to a single-bit variable in module/design-unit srfftb.
+s=0;
+|
+halcheck: *W,TRUNCZ (./srfftest.v,12|0): Truncation in constant conversion without a loss of bits in module/design-unit srfftb.
+r=0;
+|
+halcheck: *W,IMPDTC (./srfftest.v,13|0): Expression '0' implicitly converted to type 'unsigned' from type 'signed' in module/design-unit srfftb.
+r=0;
+|
+halcheck: *W,INTTOB (./srfftest.v,13|0): Assigning a 0 or 1 (32 bits) to a single-bit variable in module/design-unit srfftb.
+r=0;
+|
+halcheck: *W,TRUNCZ (./srfftest.v,13|0): Truncation in constant conversion without a loss of bits in module/design-unit srfftb.
+s=0;
+|
+halcheck: *W,IMPDTC (./srfftest.v,15|0): Expression '0' implicitly converted to type 'unsigned' from type 'signed' in module/design-unit srfftb.
+s=0;
+|
+halcheck: *W,INTTOB (./srfftest.v,15|0): Assigning a 0 or 1 (32 bits) to a single-bit variable in module/design-unit srfftb.
+s=0;
+|
+halcheck: *W,TRUNCZ (./srfftest.v,15|0): Truncation in constant conversion without a loss of bits in module/design-unit srfftb.
+r=1;
+|
+halcheck: *W,IMPDTC (./srfftest.v,16|0): Expression '1' implicitly converted to type 'unsigned' from type 'signed' in module/design-unit srfftb.
+r=1;
+|
+halcheck: *W,INTTOB (./srfftest.v,16|0): Assigning a 0 or 1 (32 bits) to a single-bit variable in module/design-unit srfftb.
+r=1;
+|
+halcheck: *W,TRUNCZ (./srfftest.v,16|0): Truncation in constant conversion without a loss of bits in module/design-unit srfftb.
+s=1;
+|
+halcheck: *W,IMPDTC (./srfftest.v,18|0): Expression '1' implicitly converted to type 'unsigned' from type 'signed' in module/design-unit srfftb.
+s=1;
+|
+halcheck: *W,INTTOB (./srfftest.v,18|0): Assigning a 0 or 1 (32 bits) to a single-bit variable in module/design-unit srfftb.
+s=1;
+|
+halcheck: *W,TRUNCZ (./srfftest.v,18|0): Truncation in constant conversion without a loss of bits in module/design-unit srfftb.
+r=1;
+|
+halcheck: *W,IMPDTC (./srfftest.v,19|0): Expression '1' implicitly converted to type 'unsigned' from type 'signed' in module/design-unit srfftb.
+r=1;
+|
+halcheck: *W,INTTOB (./srfftest.v,19|0): Assigning a 0 or 1 (32 bits) to a single-bit variable in module/design-unit srfftb.
+r=1;
+|
+halcheck: *W,TRUNCZ (./srfftest.v,19|0): Truncation in constant conversion without a loss of bits in module/design-unit srfftb.
+#10;
+|
+halcheck: *W,EMPSTM (./srfftest.v,20|0): Module 'srfftb' contains an empty statement.
+$display("s=%b r=%b clk=%b q=%b qbar=%b",s,r,clk,q,qbar); 
+|
+halcheck: *W,BADSYS (./srfftest.v,21|0): System task $display in module 'srfftb' is ignored.
+srff OUT (.s(s),.r(r),.clk(clk),.q(q),.qbar(qbar));
+|
+halcheck: *W,LCVARN (./srfftest.v,9|0): Module instance name 'OUT' uses uppercase characters.
+srff OUT (.s(s),.r(r),.clk(clk),.q(q),.qbar(qbar));
+|
+halcheck: *W,KEYWOD (./srfftest.v,9|0): VHDL reserved word 'OUT' used as an identifier or label.
+srff OUT (.s(s),.r(r),.clk(clk),.q(q),.qbar(qbar));
+|
+halcheck: *N,IDLENG (./srfftest.v,9|0): Identifier name 'OUT' is not of appropriate length (4 to 16 characters).
+begin q <= q;
+|
+halcheck: *W,SEPLIN (./srff.v,17|0): Use a separate line for each HDL statement.
+module srff(s,r,clk,q,qbar);
+|
+halcheck: *N,PRTCNT (./srff.v,1|0): Module/Entity 'srff' contains '5' ports.
+halcheck: (./srff.v,1): Number of Input ports: 3.
+halcheck: (./srff.v,1): Number of Output ports: 2.
+input s,r,clk;
+|
+halcheck: *N,DECLIN (./srff.v,2|0): Use a separate line for each HDL declaration.
+output reg q, qbar;
+|
+halcheck: *N,DECLIN (./srff.v,3|0): Use a separate line for each HDL declaration.
+begin
+|
+halcheck: *W,NOBLKN (./srff.v,5|0): Each block should be labeled with a meaningful name.
+if(s ==1)
+|
+halcheck: *W,ULCMPE (./srff.v,6|0): Unequal length operands in equality operator encountered (padding produces incorrect result) in module/design-unit OUT. LHS operand is 1 bits, RHS operand is 32 bits.
+q <= 1;
+|
+halcheck: *W,IMPDTC (./srff.v,8|0): Expression '1' implicitly converted to type 'unsigned' from type 'signed' in module/design-unit OUT.
+q <= 1;
+|
+halcheck: *W,INTTOB (./srff.v,8|0): Assigning a 0 or 1 (32 bits) to a single-bit variable in module/design-unit OUT.
+q <= 1;
+|
+halcheck: *W,TRUNCZ (./srff.v,8|0): Truncation in constant conversion without a loss of bits in module/design-unit OUT.
+qbar <= 0;
+|
+halcheck: *W,IMPDTC (./srff.v,9|0): Expression '0' implicitly converted to type 'unsigned' from type 'signed' in module/design-unit OUT.
+qbar <= 0;
+|
+halcheck: *W,INTTOB (./srff.v,9|0): Assigning a 0 or 1 (32 bits) to a single-bit variable in module/design-unit OUT.
+qbar <= 0;
+|
+halcheck: *W,TRUNCZ (./srff.v,9|0): Truncation in constant conversion without a loss of bits in module/design-unit OUT.
+else if(r == 1)
+|
+halcheck: *W,ULCMPE (./srff.v,11|0): Unequal length operands in equality operator encountered (padding produces incorrect result) in module/design-unit OUT. LHS operand is 1 bits, RHS operand is 32 bits.
+q <= 0;
+|
+halcheck: *W,IMPDTC (./srff.v,13|0): Expression '0' implicitly converted to type 'unsigned' from type 'signed' in module/design-unit OUT.
+q <= 0;
+|
+halcheck: *W,INTTOB (./srff.v,13|0): Assigning a 0 or 1 (32 bits) to a single-bit variable in module/design-unit OUT.
+q <= 0;
+|
+halcheck: *W,TRUNCZ (./srff.v,13|0): Truncation in constant conversion without a loss of bits in module/design-unit OUT.
+qbar <=1;
+|
+halcheck: *W,IMPDTC (./srff.v,14|0): Expression '1' implicitly converted to type 'unsigned' from type 'signed' in module/design-unit OUT.
+qbar <=1;
+|
+halcheck: *W,INTTOB (./srff.v,14|0): Assigning a 0 or 1 (32 bits) to a single-bit variable in module/design-unit OUT.
+qbar <=1;
+|
+halcheck: *W,TRUNCZ (./srff.v,14|0): Truncation in constant conversion without a loss of bits in module/design-unit OUT.
+else if(s == 0 & r == 0)
+|
+halcheck: *W,LOGAND (./srff.v,16|0): Bit-wise AND in a conditional expression. Logical AND may have been intended.
+else if(s == 0 & r == 0)
+|
+halcheck: *W,ULCMPE (./srff.v,16|0): Unequal length operands in equality operator encountered (padding produces incorrect result) in module/design-unit OUT. LHS operand is 1 bits, RHS operand is 32 bits.
+`include "srff.v"
+|
+halcheck: *W,NOINCD (./srfftest.v,2|0): Compiler directive `include should not be used.
+halcheck: Total errors   = 1.
+halcheck: Total warnings = 48.
+
+  ==========================================================================
+Performing synthesizability checks 
+
+cfe64: 15.20.051-s(15.20.s051): (c) Copyright 1995 - 2018 Cadence Design Systems, Inc.
+cfe64 Build : Mon May  7 17:15:12 IST 2018 ldvopt246
+halsynth: Loading design snapshot....
+halsynth: Traversing design hierarchy....
+reg s,r,clk=0;
+|
+halsynth: *W,INIUSP (./srfftest.v,5|0): Module srfftb has an initial block or a variable declaration assignment, which is ignored by synthesis tools.
+always #15 clk=~clk;
+|
+halsynth: *E,AWNDEL (./srfftest.v,7|0): Always block with no event trigger at the start in module srfftb.
+initial begin
+|
+halsynth: *W,INIUSP (./srfftest.v,10|0): Module srfftb has an initial block or a variable declaration assignment, which is ignored by synthesis tools.
+halsynth: *W,COMBLP: In module srfftb, combinational loop detected for node clk.
+always #15 clk=~clk;
+|
+halsynth: (./srfftest.v,7|0): Source HDL information for the error/warning mentioned above.
+always #15 clk=~clk;
+|
+halsynth: *W,IGNDLY (./srfftest.v,7|0): Lumped delay in module 'srfftb' is ignored.
+halsynth: Total errors   = 1.
+halsynth: Total warnings = 4.
+
+  ==========================================================================
+Performing structural checks 
+
+halstruct(64): 15.20-s051: (c) Copyright 1995-2018 Cadence Design Systems, Inc.
+visadev(64): 15.20-s051: (c) Copyright 1995-2018 Cadence Design Systems, Inc.
+reg s,r,clk=0;
+|
+halstruct: *E,CMBPAU (./srfftest.v,5|0): Combinational loop detected through 'clk' in module/design-unit 'srfftb'.
+halstruct: (./srfftest.v,7): srfftb.clk.
+srff OUT (.s(s),.r(r),.clk(clk),.q(q),.qbar(qbar));
+|
+halstruct: *E,UNCONI (./srfftest.v,9|0): Input port 's' of entity/module 'srff' is being used inside architecture/module, but not connected (either partially or completely) in its instance 'srfftb.OUT'.
+halstruct: (./srfftest.v,9): 's' mapped to actual expression 's' which is undriven.
+srff OUT (.s(s),.r(r),.clk(clk),.q(q),.qbar(qbar));
+|
+halstruct: *E,UNCONI (./srfftest.v,9|0): Input port 'r' of entity/module 'srff' is being used inside architecture/module, but not connected (either partially or completely) in its instance 'srfftb.OUT'.
+halstruct: (./srfftest.v,9): 'r' mapped to actual expression 'r' which is undriven.
+srff OUT (.s(s),.r(r),.clk(clk),.q(q),.qbar(qbar));
+|
+halstruct: *W,UNCONO (./srfftest.v,9|0): Port 'q' (which is being used as an output) of entity/module 'srff' is being driven inside the design, but not connected (either partially or completely) in its instance 'srfftb.OUT'.
+srff OUT (.s(s),.r(r),.clk(clk),.q(q),.qbar(qbar));
+|
+halstruct: *W,UNCONO (./srfftest.v,9|0): Port 'qbar' (which is being used as an output) of entity/module 'srff' is being driven inside the design, but not connected (either partially or completely) in its instance 'srfftb.OUT'.
+q <= 0;
+|
+halstruct: *W,FFWASR (./srff.v,13|0): Flip-flop 'q' does not have any asynchronous set or reset.
+reg s,r,clk=0;
+|
+halstruct: *N,CLKINF (./srfftest.v,5|0): Signal 'srfftb.clk' was inferred as clock.
+halstruct: (./srfftest.v,5): Clock source is signal 'srfftb.clk'.
+halstruct: (./srff.v,13): Drives the flip-flop 'srfftb.OUT.q'.
+q <= 0;
+|
+halstruct: *W,CLKNPI (./srff.v,13|0): Flip-flop 'srfftb.OUT.q' has clock 'clk' which is not derived from primary input.
+halstruct: (./srfftest.v,7): Derived from local variable 'clk'.
+q <= 0;
+|
+halstruct: *W,NEGCLK (./srff.v,13|0): Clock signal 'srfftb.clk' of flip-flop 'srfftb.OUT.q' is derived from an inverter.
+qbar <=1;
+|
+halstruct: *W,FFWASR (./srff.v,14|0): Flip-flop 'qbar' does not have any asynchronous set or reset.
+qbar <=1;
+|
+halstruct: *W,NEGCLK (./srff.v,14|0): Clock signal 'srfftb.clk' of flip-flop 'srfftb.OUT.qbar' is derived from an inverter.
+module srfftb();
+|
+halstruct: *W,ATLGLC (./srfftest.v,3|0): Glue logic inferred in top-level module/design-unit 'srfftb'.
+halstruct: (./srfftest.v,7): HDL-statement inferred as glue logic.
+module srfftb();
+|
+halstruct: *N,NUMDFF (./srfftest.v,3|0): Number of single-bit D flip-flops present in the hierarchy is 2.
+halstruct: Design facts generated in 'hal.design_facts'.
+halstruct: Total errors   = 3.
+halstruct: Total warnings = 8.
+
+  ==========================================================================
+
+Analysis summary :
+
+ Errors   : (5)
+  AWNDEL (1)      CMBPAU (1)      RTLINI (1)      UNCONI (2)     
+
+ Warnings : (60)
+  ATLGLC (1)      BADSYS (1)      CLKNPI (1)      COMBLP (1)     
+  DIFFMN (1)      EMPSTM (1)      EVTRIG (1)      FFWASR (2)     
+  IGNDLY (1)      IMPDTC (10)     INIUSP (2)      INTTOB (10)    
+  KEYWOD (1)      LCVARN (1)      LOGAND (1)      NBGEND (1)     
+  NEEDIO (1)      NEGCLK (2)      NOBLKN (2)      NOINCD (1)     
+  RDBFAS (1)      SEPLIN (2)      TRUNCZ (10)     ULCMPE (3)     
+  UNCONO (2)     
+
+ Notes    : (7)
+  CDNOTE (1)      CLKINF (1)      DECLIN (2)      IDLENG (1)     
+  NUMDFF (1)      PRTCNT (1)     
+
+Analysis complete.
+
+ ==========================================================================
+
+To analyze results, run following command :
+    ncbrowse -64bit -cdslib /home/adld25/01fe19bec096/srff/cds.lib -sortby severity -sortby category -sortby tag hal.log
+

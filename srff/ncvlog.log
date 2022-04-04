@@ -1,0 +1,8 @@
+ncvlog(64): 15.20-s051: (c) Copyright 1995-2018 Cadence Design Systems, Inc.
+module srff(s,r,clk,q,qbar);
+          |
+ncvlog: *W,RECOMP (srff.v,1|10): recompiling design unit worklib.srff.
+	First compiled from line 1 of /home/adld25/01fe19bec096/srff/srff.v.
+(`include file: srff.v line 1, file: /home/adld25/01fe19bec096/srff/srfftest.v line 2)
+ncvlog: Memory Usage - 21.3M program + 29.0M data = 50.4M total
+ncvlog: CPU Usage - 0.0s system + 0.0s user = 0.0s total (0.0s, 30.4% cpu)
