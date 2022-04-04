@@ -1,0 +1,111 @@
+hal(64): 15.20-s051: (c) Copyright 1995-2018 Cadence Design Systems, Inc.
+hal: Options:   -cdslib /home/adld25/01fe19bec096/not_gate/cds.lib -logfile hal.log worklib.tb:module.
+hal: Snapshot:  worklib.tb:module.
+hal: Workspace: /home/adld25/01fe19bec096/not_gate.
+hal: Date: Mon Apr 04 17:52:08 IST 2022.
+
+hal: Running on elaborated SNAPSHOT.....
+
+  ==========================================================================
+Performing lint checks 
+
+halcheck(64): 15.20-s051: (c) Copyright 1995-2018 Cadence Design Systems, Inc.
+visadev(64): 15.20-s051: (c) Copyright 1995-2018 Cadence Design Systems, Inc.
+module tb;
+|
+halcheck: *N,IDLENG (./notgate_tb.v,1|0): Identifier name 'tb' is not of appropriate length (4 to 16 characters).
+module tb;
+|
+halcheck: *W,DIFFMN (./notgate_tb.v,1|0): Module name 'tb' differs from file name 'notgate_tb.v'.
+module tb;
+|
+halcheck: *W,NEEDIO (./notgate_tb.v,1|0): Top-level module 'tb' has no inputs/outputs/inouts.
+notgate uut(y,a);
+|
+halcheck: *W,CBYNAM (./notgate_tb.v,4|0): Port connections for instance 'uut' of module 'notgate' should be made by name rather than by positional ordered list.
+begin 
+|
+halcheck: *W,NOBLKN (./notgate_tb.v,7|0): Each block should be labeled with a meaningful name.
+#100;
+|
+halcheck: *W,EMPSTM (./notgate_tb.v,9|0): Module 'tb' contains an empty statement.
+#100;
+|
+halcheck: *W,EMPSTM (./notgate_tb.v,11|0): Module 'tb' contains an empty statement.
+notgate uut(y,a);
+|
+halcheck: *N,IDLENG (./notgate_tb.v,4|0): Identifier name 'uut' is not of appropriate length (4 to 16 characters).
+module notgate(y,a);
+|
+halcheck: *W,DIFFMN (./notgate_tb.v,16|0): Module name 'notgate' differs from file name 'notgate_tb.v'.
+module notgate(y,a);
+|
+halcheck: *W,MULTMF (./notgate_tb.v,16|0): More than one design-unit definition in file 'notgate_tb.v'.
+module notgate(y,a);
+|
+halcheck: *N,PRTCNT (./notgate_tb.v,16|0): Module/Entity 'notgate' contains '2' ports.
+halcheck: (./notgate_tb.v,16): Number of Input ports: 1.
+halcheck: (./notgate_tb.v,16): Number of Output ports: 1.
+wire y;
+|
+halcheck: *W,URDWIR (./notgate_tb.v,3|0): Wire 'y' defined in module 'tb' does not drive any object, but is assigned at least once.
+halcheck: Total errors   = 0.
+halcheck: Total warnings = 9.
+
+  ==========================================================================
+Performing synthesizability checks 
+
+cfe64: 15.20.051-s(15.20.s051): (c) Copyright 1995 - 2018 Cadence Design Systems, Inc.
+cfe64 Build : Mon May  7 17:15:12 IST 2018 ldvopt246
+halsynth: Loading design snapshot....
+halsynth: Traversing design hierarchy....
+initial 
+|
+halsynth: *W,INIUSP (./notgate_tb.v,6|0): Module tb has an initial block or a variable declaration assignment, which is ignored by synthesis tools.
+halsynth: Total errors   = 0.
+halsynth: Total warnings = 1.
+
+  ==========================================================================
+Performing structural checks 
+
+halstruct(64): 15.20-s051: (c) Copyright 1995-2018 Cadence Design Systems, Inc.
+visadev(64): 15.20-s051: (c) Copyright 1995-2018 Cadence Design Systems, Inc.
+notgate uut(y,a);
+|
+halstruct: *W,UNCONO (./notgate_tb.v,4|0): Port 'y' (which is being used as an output) of entity/module 'notgate' is being driven inside the design, but not connected (either partially or completely) in its instance 'tb.uut'.
+notgate uut(y,a);
+|
+halstruct: *E,UNCONI (./notgate_tb.v,4|0): Input port 'a' of entity/module 'notgate' is being used inside architecture/module, but not connected (either partially or completely) in its instance 'tb.uut'.
+halstruct: (./notgate_tb.v,4): 'a' mapped to actual expression 'a' which is undriven.
+assign y=~a;
+|
+halstruct: *W,SYNPRT (./notgate_tb.v,19|0): Output port 'y' is assigned asynchronously.
+module tb;
+|
+halstruct: *N,NUMDFF (./notgate_tb.v,1|0): Number of single-bit D flip-flops present in the hierarchy is 0.
+halstruct: Design facts generated in 'hal.design_facts'.
+halstruct: Total errors   = 1.
+halstruct: Total warnings = 2.
+
+  ==========================================================================
+
+Analysis summary :
+
+ Errors   : (1)
+  UNCONI (1)     
+
+ Warnings : (12)
+  CBYNAM (1)      DIFFMN (2)      EMPSTM (2)      INIUSP (1)     
+  MULTMF (1)      NEEDIO (1)      NOBLKN (1)      SYNPRT (1)     
+  UNCONO (1)      URDWIR (1)     
+
+ Notes    : (4)
+  IDLENG (2)      NUMDFF (1)      PRTCNT (1)     
+
+Analysis complete.
+
+ ==========================================================================
+
+To analyze results, run following command :
+    ncbrowse -64bit -cdslib /home/adld25/01fe19bec096/not_gate/cds.lib -sortby severity -sortby category -sortby tag hal.log
+
