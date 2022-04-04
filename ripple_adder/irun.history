@@ -1,0 +1,4 @@
+s1(04Apr2022:16:36:10):  irun -access +rwc ripple_adder_tb.v 
+s2(04Apr2022:16:38:50):  irun -access +rwc ripple_carry_adder_tb.v 
+s3(04Apr2022:16:38:58):  irun -access +rwc ripple_carry_adder_tb.v 
+s4(04Apr2022:17:31:00):  irun -access +rwc ripple_carry_adder_tb.v 

@@ -1,0 +1,183 @@
+hal(64): 15.20-s051: (c) Copyright 1995-2018 Cadence Design Systems, Inc.
+hal: Options:   -cdslib /home/adld15/241/ripple_adder/cds.lib -logfile hal.log worklib.ripple_adder_tb:v.
+hal: Snapshot:  worklib.ripple_adder_tb:v.
+hal: *W,PRTSNP: Design is partially elaborated. Connectivity information may not be complete.
+hal: Workspace: /home/adld15/241/ripple_adder.
+hal: Date: Mon Apr 04 17:33:43 IST 2022.
+
+hal: Running on elaborated SNAPSHOT.....
+
+  ==========================================================================
+Performing lint checks 
+
+halcheck(64): 15.20-s051: (c) Copyright 1995-2018 Cadence Design Systems, Inc.
+visadev(64): 15.20-s051: (c) Copyright 1995-2018 Cadence Design Systems, Inc.
+module ripple_adder_tb();
+|
+halcheck: *W,DIFFMN (./ripple_carry_adder_tb.v,1|0): Module name 'ripple_adder_tb' differs from file name 'ripple_carry_adder_tb.v'.
+module ripple_adder_tb();
+|
+halcheck: *W,NEEDIO (./ripple_carry_adder_tb.v,1|0): Top-level module 'ripple_adder_tb' has no inputs/outputs/inouts.
+wire[3:0]sum;
+|
+halcheck: *W,STYVAL (./ripple_carry_adder_tb.v,3|0): Numeric value '3' used for identifier 'sum'. Use constants to avoid portability issues.
+reg[3:0]a,b;
+|
+halcheck: *W,STYVAL (./ripple_carry_adder_tb.v,2|0): Numeric value '3' used for identifier 'a'. Use constants to avoid portability issues.
+initial begin
+|
+halcheck: *W,NOBLKN (./ripple_carry_adder_tb.v,6|0): Each block should be labeled with a meaningful name.
+$monitor($time,"a=%b b=%b sum=%b cout=%b",a,b,sum,cout);
+|
+halcheck: *W,BADSYS (./ripple_carry_adder_tb.v,7|0): System task $monitor in module 'ripple_adder_tb' is ignored.
+#10;
+|
+halcheck: *W,EMPSTM (./ripple_carry_adder_tb.v,19|0): Module 'ripple_adder_tb' contains an empty statement.
+ripple_adder DUT(.a(a),.b(b),.sum(sum),.cout(cout));
+|
+halcheck: *W,LCVARN (./ripple_carry_adder_tb.v,5|0): Module instance name 'DUT' uses uppercase characters.
+ripple_adder DUT(.a(a),.b(b),.sum(sum),.cout(cout));
+|
+halcheck: *N,IDLENG (./ripple_carry_adder_tb.v,5|0): Identifier name 'DUT' is not of appropriate length (4 to 16 characters).
+module ripple_adder(a,b,sum,cout);
+|
+halcheck: *W,DIFFMN (./ripple_carry_adder_tb.v,23|0): Module name 'ripple_adder' differs from file name 'ripple_carry_adder_tb.v'.
+module ripple_adder(a,b,sum,cout);
+|
+halcheck: *W,MULTMF (./ripple_carry_adder_tb.v,23|0): More than one design-unit definition in file 'ripple_carry_adder_tb.v'.
+module ripple_adder(a,b,sum,cout);
+|
+halcheck: *N,PRTCNT (./ripple_carry_adder_tb.v,23|0): Module/Entity 'ripple_adder' contains '4' ports.
+halcheck: (./ripple_carry_adder_tb.v,23): Number of Input ports: 2.
+halcheck: (./ripple_carry_adder_tb.v,23): Number of Output ports: 2.
+full_adder u1(a[0],b[0],1'b0,sum[0],w1);
+|
+halcheck: *W,IPRTEX (./ripple_carry_adder_tb.v,28|0): A constant is used in a port expression.
+full_adder u1(a[0],b[0],1'b0,sum[0],w1);
+|
+halcheck: *W,CBYNAM (./ripple_carry_adder_tb.v,28|0): Port connections for instance 'u1' of module 'full_adder' should be made by name rather than by positional ordered list.
+full_adder u2(a[1],b[1],w1,sum[1],w2);
+|
+halcheck: *W,CBYNAM (./ripple_carry_adder_tb.v,29|0): Port connections for instance 'u2' of module 'full_adder' should be made by name rather than by positional ordered list.
+full_adder u3(a[2],b[2],w2,sum[2],w3);
+|
+halcheck: *W,CBYNAM (./ripple_carry_adder_tb.v,30|0): Port connections for instance 'u3' of module 'full_adder' should be made by name rather than by positional ordered list.
+full_adder u4(a[3],b[3],w3,sum[3],cout);
+|
+halcheck: *W,CBYNAM (./ripple_carry_adder_tb.v,31|0): Port connections for instance 'u4' of module 'full_adder' should be made by name rather than by positional ordered list.
+input[3:0]a,b;
+|
+halcheck: *W,STYVAL (./ripple_carry_adder_tb.v,24|0): Numeric value '3' used for identifier 'a'. Use constants to avoid portability issues.
+input[3:0]a,b;
+|
+halcheck: *N,DECLIN (./ripple_carry_adder_tb.v,24|0): Use a separate line for each HDL declaration.
+output[3:0]sum;
+|
+halcheck: *W,STYVAL (./ripple_carry_adder_tb.v,25|0): Numeric value '3' used for identifier 'sum'. Use constants to avoid portability issues.
+full_adder u1(a[0],b[0],1'b0,sum[0],w1);
+|
+halcheck: *N,IDLENG (./ripple_carry_adder_tb.v,28|0): Identifier name 'u1' is not of appropriate length (4 to 16 characters).
+full_adder u2(a[1],b[1],w1,sum[1],w2);
+|
+halcheck: *N,IDLENG (./ripple_carry_adder_tb.v,29|0): Identifier name 'u2' is not of appropriate length (4 to 16 characters).
+full_adder u3(a[2],b[2],w2,sum[2],w3);
+|
+halcheck: *N,IDLENG (./ripple_carry_adder_tb.v,30|0): Identifier name 'u3' is not of appropriate length (4 to 16 characters).
+full_adder u4(a[3],b[3],w3,sum[3],cout);
+|
+halcheck: *N,IDLENG (./ripple_carry_adder_tb.v,31|0): Identifier name 'u4' is not of appropriate length (4 to 16 characters).
+wire w1,w2,w3;
+|
+halcheck: *W,UASWIR (./ripple_carry_adder_tb.v,27|0): Wire 'w1' defined in module 'ripple_adder' is unassigned, but drives at least an object.
+wire w1,w2,w3;
+|
+halcheck: *W,UASWIR (./ripple_carry_adder_tb.v,27|0): Wire 'w2' defined in module 'ripple_adder' is unassigned, but drives at least an object.
+wire w1,w2,w3;
+|
+halcheck: *W,UASWIR (./ripple_carry_adder_tb.v,27|0): Wire 'w3' defined in module 'ripple_adder' is unassigned, but drives at least an object.
+halcheck: Total errors   = 0.
+halcheck: Total warnings = 20.
+
+  ==========================================================================
+Performing synthesizability checks 
+
+cfe64: 15.20.051-s(15.20.s051): (c) Copyright 1995 - 2018 Cadence Design Systems, Inc.
+cfe64 Build : Mon May  7 17:15:12 IST 2018 ldvopt246
+halsynth: Loading design snapshot....
+halsynth: Traversing design hierarchy....
+full_adder u1(a[0],b[0],1'b0,sum[0],w1);
+|
+halsynth: *W,UNCINW (./ripple_carry_adder_tb.v,28|0): Component instance is not fully bound (u1).
+full_adder u2(a[1],b[1],w1,sum[1],w2);
+|
+halsynth: *W,UNCINW (./ripple_carry_adder_tb.v,29|0): Component instance is not fully bound (u2).
+full_adder u3(a[2],b[2],w2,sum[2],w3);
+|
+halsynth: *W,UNCINW (./ripple_carry_adder_tb.v,30|0): Component instance is not fully bound (u3).
+full_adder u4(a[3],b[3],w3,sum[3],cout);
+|
+halsynth: *W,UNCINW (./ripple_carry_adder_tb.v,31|0): Component instance is not fully bound (u4).
+output[3:0]sum;
+|
+halsynth: *W,UNDRIV (./ripple_carry_adder_tb.v,25|0): Primary output/inout 'sum'  is not driven in the module 'ripple_adder'.
+input[3:0]a,b;
+|
+halsynth: *W,INPOUT (./ripple_carry_adder_tb.v,24|0): Primary input port a of module ripple_adder may be driven inside the module.
+initial begin
+|
+halsynth: *W,INIUSP (./ripple_carry_adder_tb.v,6|0): Module ripple_adder_tb has an initial block or a variable declaration assignment, which is ignored by synthesis tools.
+halsynth: Total errors   = 0.
+halsynth: Total warnings = 7.
+
+  ==========================================================================
+Performing structural checks 
+
+halstruct(64): 15.20-s051: (c) Copyright 1995-2018 Cadence Design Systems, Inc.
+visadev(64): 15.20-s051: (c) Copyright 1995-2018 Cadence Design Systems, Inc.
+ripple_adder DUT(.a(a),.b(b),.sum(sum),.cout(cout));
+|
+halstruct: *W,UNCONO (./ripple_carry_adder_tb.v,5|0): Port 'a' (which is being used as an output) of entity/module 'ripple_adder' is being driven inside the design, but not connected (either partially or completely) in its instance 'ripple_adder_tb.DUT'.
+ripple_adder DUT(.a(a),.b(b),.sum(sum),.cout(cout));
+|
+halstruct: *E,UNCONI (./ripple_carry_adder_tb.v,5|0): Input port 'b' of entity/module 'ripple_adder' is being used inside architecture/module, but not connected (either partially or completely) in its instance 'ripple_adder_tb.DUT'.
+halstruct: (./ripple_carry_adder_tb.v,5): 'b[1]' mapped to actual expression 'b' which is undriven.
+halstruct: (./ripple_carry_adder_tb.v,5): 'b[2]' mapped to actual expression 'b' which is undriven.
+halstruct: (./ripple_carry_adder_tb.v,5): 'b[3]' mapped to actual expression 'b' which is undriven.
+halstruct: (./ripple_carry_adder_tb.v,5): 'b[0]' mapped to actual expression 'b' which is undriven.
+ripple_adder DUT(.a(a),.b(b),.sum(sum),.cout(cout));
+|
+halstruct: *W,UNCONO (./ripple_carry_adder_tb.v,5|0): Port 'cout' (which is being used as an output) of entity/module 'ripple_adder' is being driven inside the design, but not connected (either partially or completely) in its instance 'ripple_adder_tb.DUT'.
+full_adder u4(a[3],b[3],w3,sum[3],cout);
+|
+halstruct: *W,SYNPRT (./ripple_carry_adder_tb.v,31|0): Output port 'cout' is assigned asynchronously.
+module ripple_adder_tb();
+|
+halstruct: *N,NUMDFF (./ripple_carry_adder_tb.v,1|0): Number of single-bit D flip-flops present in the hierarchy is 0.
+halstruct: Design facts generated in 'hal.design_facts'.
+halstruct: Total errors   = 1.
+halstruct: Total warnings = 3.
+
+  ==========================================================================
+
+Analysis summary :
+
+ Errors   : (1)
+  UNCONI (1)     
+
+ Warnings : (31)
+  BADSYS (1)      CBYNAM (4)      DIFFMN (2)      EMPSTM (1)     
+  INIUSP (1)      INPOUT (1)      IPRTEX (1)      LCVARN (1)     
+  MULTMF (1)      NEEDIO (1)      NOBLKN (1)      PRTSNP (1)     
+  STYVAL (4)      SYNPRT (1)      UASWIR (3)      UNCINW (4)     
+  UNCONO (2)      UNDRIV (1)     
+
+ Notes    : (8)
+  DECLIN (1)      IDLENG (5)      NUMDFF (1)      PRTCNT (1)     
+
+Analysis complete.
+
+ ==========================================================================
+
+To analyze results, run following command :
+    ncbrowse -64bit -cdslib /home/adld15/241/ripple_adder/cds.lib -sortby severity -sortby category -sortby tag hal.log
+
