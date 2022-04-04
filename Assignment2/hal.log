@@ -1,0 +1,1441 @@
+hal(64): 15.20-s051: (c) Copyright 1995-2018 Cadence Design Systems, Inc.
+hal: Options:   -cdslib /home/adld25/Ass_two/cds.lib -logfile hal.log worklib.pipe2_test:v.
+hal: Snapshot:  worklib.pipe2_test:v.
+hal: Workspace: /home/adld25/Ass_two.
+hal: Date: Fri Mar 25 11:16:59 IST 2022.
+
+hal: Running on elaborated SNAPSHOT.....
+
+  ==========================================================================
+Performing lint checks 
+
+halcheck(64): 15.20-s051: (c) Copyright 1995-2018 Cadence Design Systems, Inc.
+visadev(64): 15.20-s051: (c) Copyright 1995-2018 Cadence Design Systems, Inc.
+module pipe2_test;
+|
+halcheck: *W,DIFFMN (./As_tb.v,1|0): Module name 'pipe2_test' differs from file name 'As_tb.v'.
+module pipe2_test;
+|
+halcheck: *W,NEEDIO (./As_tb.v,1|0): Top-level module 'pipe2_test' has no inputs/outputs/inouts.
+pipe_ex2 MYPIPE(z,rs1,rs2,rd,func,addr,clk1,clk2);
+|
+halcheck: *W,CBYNAM (./As_tb.v,8|0): Port connections for instance 'MYPIPE' of module 'pipe_ex2' should be made by name rather than by positional ordered list.
+wire[15:0] z;
+|
+halcheck: *W,STYVAL (./As_tb.v,2|0): Numeric value '15' used for identifier 'z'. Use constants to avoid portability issues.
+reg [3:0] rs1,rs2,rd,func;
+|
+halcheck: *W,NUMSUF (./As_tb.v,3|0): Identifier 'rs1' has a numeric value suffix.
+reg [3:0] rs1,rs2,rd,func;
+|
+halcheck: *W,STYVAL (./As_tb.v,3|0): Numeric value '3' used for identifier 'rs1'. Use constants to avoid portability issues.
+reg [3:0] rs1,rs2,rd,func;
+|
+halcheck: *W,NUMSUF (./As_tb.v,3|0): Identifier 'rs2' has a numeric value suffix.
+reg[7:0] addr;
+|
+halcheck: *W,STYVAL (./As_tb.v,4|0): Numeric value '7' used for identifier 'addr'. Use constants to avoid portability issues.
+    begin
+|
+halcheck: *W,NOBLKN (./As_tb.v,10|0): Each block should be labeled with a meaningful name.
+       clk1 =0;clk2 = 0;
+|
+halcheck: *W,IMPDTC (./As_tb.v,11|0): Expression '0' implicitly converted to type 'unsigned' from type 'signed' in module/design-unit pipe2_test.
+       clk1 =0;clk2 = 0;
+|
+halcheck: *W,INTTOB (./As_tb.v,11|0): Assigning a 0 or 1 (32 bits) to a single-bit variable in module/design-unit pipe2_test.
+       clk1 =0;clk2 = 0;
+|
+halcheck: *W,TRUNCZ (./As_tb.v,11|0): Truncation in constant conversion without a loss of bits in module/design-unit pipe2_test.
+       clk1 =0;clk2 = 0;
+|
+halcheck: *W,SEPLIN (./As_tb.v,11|0): Use a separate line for each HDL statement.
+           #5 clk1=1; #5 clk1=0;
+|
+halcheck: *W,IMPDTC (./As_tb.v,14|0): Expression '1' implicitly converted to type 'unsigned' from type 'signed' in module/design-unit pipe2_test.
+           #5 clk1=1; #5 clk1=0;
+|
+halcheck: *W,INTTOB (./As_tb.v,14|0): Assigning a 0 or 1 (32 bits) to a single-bit variable in module/design-unit pipe2_test.
+           #5 clk1=1; #5 clk1=0;
+|
+halcheck: *W,TRUNCZ (./As_tb.v,14|0): Truncation in constant conversion without a loss of bits in module/design-unit pipe2_test.
+           #5 clk1=1; #5 clk1=0;
+|
+halcheck: *W,SEPLIN (./As_tb.v,14|0): Use a separate line for each HDL statement.
+           #5 clk1=1; #5 clk1=0;
+|
+halcheck: *W,IMPDTC (./As_tb.v,14|0): Expression '0' implicitly converted to type 'unsigned' from type 'signed' in module/design-unit pipe2_test.
+           #5 clk2=1; #5 clk2=0;
+|
+halcheck: *W,IMPDTC (./As_tb.v,15|0): Expression '1' implicitly converted to type 'unsigned' from type 'signed' in module/design-unit pipe2_test.
+           #5 clk2=1; #5 clk2=0;
+|
+halcheck: *W,INTTOB (./As_tb.v,15|0): Assigning a 0 or 1 (32 bits) to a single-bit variable in module/design-unit pipe2_test.
+           #5 clk2=1; #5 clk2=0;
+|
+halcheck: *W,TRUNCZ (./As_tb.v,15|0): Truncation in constant conversion without a loss of bits in module/design-unit pipe2_test.
+           #5 clk2=1; #5 clk2=0;
+|
+halcheck: *W,SEPLIN (./As_tb.v,15|0): Use a separate line for each HDL statement.
+           #5 clk2=1; #5 clk2=0;
+|
+halcheck: *W,IMPDTC (./As_tb.v,15|0): Expression '0' implicitly converted to type 'unsigned' from type 'signed' in module/design-unit pipe2_test.
+      MYPIPE.regbank[k]=k;
+|
+halcheck: *W,INIMEM (./As_tb.v,21|0): Initialization of memory 'regbank' in module 'pipe2_test' is ignored.
+      MYPIPE.regbank[k]=k;
+|
+halcheck: *W,IMPDTC (./As_tb.v,21|0): Expression 'k' implicitly converted to type 'unsigned' from type 'signed' in module/design-unit pipe2_test.
+      MYPIPE.regbank[k]=k;
+|
+halcheck: *W,UEASTR (./As_tb.v,21|0): Unequal length operands in assignment in module/design-unit pipe2_test. Length of RHS is greater than LHS.
+halcheck: (./As_tb.v,21): LHS 'regbank[k]' (unsigned) - 16 bit(s), RHS 'k' (signed) - 32 bit(s). 16 most significant bit(s) will be lost.
+    begin 
+|
+halcheck: *W,NOBLKN (./As_tb.v,24|0): Each block should be labeled with a meaningful name.
+       #5 rs1 = 3;  rs2 = 5; rd = 10; func = 0; addr = 125; 
+|
+halcheck: *W,IMPDTC (./As_tb.v,25|0): Expression '3' implicitly converted to type 'unsigned' from type 'signed' in module/design-unit pipe2_test.
+       #5 rs1 = 3;  rs2 = 5; rd = 10; func = 0; addr = 125; 
+|
+halcheck: *W,TRUNCZ (./As_tb.v,25|0): Truncation in constant conversion without a loss of bits in module/design-unit pipe2_test.
+       #5 rs1 = 3;  rs2 = 5; rd = 10; func = 0; addr = 125; 
+|
+halcheck: *W,CONSBS (./As_tb.v,25|0): Base ('d, 'b, 'h, 'o) not specified for constant 3 in module/design-unit pipe2_test.
+       #5 rs1 = 3;  rs2 = 5; rd = 10; func = 0; addr = 125; 
+|
+halcheck: *W,SEPLIN (./As_tb.v,25|0): Use a separate line for each HDL statement.
+       #5 rs1 = 3;  rs2 = 5; rd = 10; func = 0; addr = 125; 
+|
+halcheck: *W,IMPDTC (./As_tb.v,25|0): Expression '5' implicitly converted to type 'unsigned' from type 'signed' in module/design-unit pipe2_test.
+       #5 rs1 = 3;  rs2 = 5; rd = 10; func = 0; addr = 125; 
+|
+halcheck: *W,CONSBS (./As_tb.v,25|0): Base ('d, 'b, 'h, 'o) not specified for constant 5 in module/design-unit pipe2_test.
+       #5 rs1 = 3;  rs2 = 5; rd = 10; func = 0; addr = 125; 
+|
+halcheck: *W,IMPDTC (./As_tb.v,25|0): Expression '10' implicitly converted to type 'unsigned' from type 'signed' in module/design-unit pipe2_test.
+       #5 rs1 = 3;  rs2 = 5; rd = 10; func = 0; addr = 125; 
+|
+halcheck: *W,CONSBS (./As_tb.v,25|0): Base ('d, 'b, 'h, 'o) not specified for constant 10 in module/design-unit pipe2_test.
+       #5 rs1 = 3;  rs2 = 5; rd = 10; func = 0; addr = 125; 
+|
+halcheck: *W,IMPDTC (./As_tb.v,25|0): Expression '0' implicitly converted to type 'unsigned' from type 'signed' in module/design-unit pipe2_test.
+       #5 rs1 = 3;  rs2 = 5; rd = 10; func = 0; addr = 125; 
+|
+halcheck: *W,IMPDTC (./As_tb.v,25|0): Expression '125' implicitly converted to type 'unsigned' from type 'signed' in module/design-unit pipe2_test.
+       #5 rs1 = 3;  rs2 = 5; rd = 10; func = 0; addr = 125; 
+|
+halcheck: *W,CONSBS (./As_tb.v,25|0): Base ('d, 'b, 'h, 'o) not specified for constant 125 in module/design-unit pipe2_test.
+       #5 rs1 = 3;  rs2 = 8; rd = 12; func = 2; addr = 126;  
+|
+halcheck: *W,IMPDTC (./As_tb.v,26|0): Expression '3' implicitly converted to type 'unsigned' from type 'signed' in module/design-unit pipe2_test.
+       #5 rs1 = 3;  rs2 = 8; rd = 12; func = 2; addr = 126;  
+|
+halcheck: *W,TRUNCZ (./As_tb.v,26|0): Truncation in constant conversion without a loss of bits in module/design-unit pipe2_test.
+       #5 rs1 = 3;  rs2 = 8; rd = 12; func = 2; addr = 126;  
+|
+halcheck: *W,CONSBS (./As_tb.v,26|0): Base ('d, 'b, 'h, 'o) not specified for constant 3 in module/design-unit pipe2_test.
+       #5 rs1 = 3;  rs2 = 8; rd = 12; func = 2; addr = 126;  
+|
+halcheck: *W,SEPLIN (./As_tb.v,26|0): Use a separate line for each HDL statement.
+       #5 rs1 = 3;  rs2 = 8; rd = 12; func = 2; addr = 126;  
+|
+halcheck: *W,IMPDTC (./As_tb.v,26|0): Expression '8' implicitly converted to type 'unsigned' from type 'signed' in module/design-unit pipe2_test.
+       #5 rs1 = 3;  rs2 = 8; rd = 12; func = 2; addr = 126;  
+|
+halcheck: *W,CONSBS (./As_tb.v,26|0): Base ('d, 'b, 'h, 'o) not specified for constant 8 in module/design-unit pipe2_test.
+       #5 rs1 = 3;  rs2 = 8; rd = 12; func = 2; addr = 126;  
+|
+halcheck: *W,IMPDTC (./As_tb.v,26|0): Expression '12' implicitly converted to type 'unsigned' from type 'signed' in module/design-unit pipe2_test.
+       #5 rs1 = 3;  rs2 = 8; rd = 12; func = 2; addr = 126;  
+|
+halcheck: *W,CONSBS (./As_tb.v,26|0): Base ('d, 'b, 'h, 'o) not specified for constant 12 in module/design-unit pipe2_test.
+       #5 rs1 = 3;  rs2 = 8; rd = 12; func = 2; addr = 126;  
+|
+halcheck: *W,IMPDTC (./As_tb.v,26|0): Expression '2' implicitly converted to type 'unsigned' from type 'signed' in module/design-unit pipe2_test.
+       #5 rs1 = 3;  rs2 = 8; rd = 12; func = 2; addr = 126;  
+|
+halcheck: *W,CONSBS (./As_tb.v,26|0): Base ('d, 'b, 'h, 'o) not specified for constant 2 in module/design-unit pipe2_test.
+       #5 rs1 = 3;  rs2 = 8; rd = 12; func = 2; addr = 126;  
+|
+halcheck: *W,IMPDTC (./As_tb.v,26|0): Expression '126' implicitly converted to type 'unsigned' from type 'signed' in module/design-unit pipe2_test.
+       #5 rs1 = 3;  rs2 = 8; rd = 12; func = 2; addr = 126;  
+|
+halcheck: *W,CONSBS (./As_tb.v,26|0): Base ('d, 'b, 'h, 'o) not specified for constant 126 in module/design-unit pipe2_test.
+       #5 rs1 = 10;  rs2 = 5; rd = 14; func = 1; addr = 128;  
+|
+halcheck: *W,IMPDTC (./As_tb.v,27|0): Expression '10' implicitly converted to type 'unsigned' from type 'signed' in module/design-unit pipe2_test.
+       #5 rs1 = 10;  rs2 = 5; rd = 14; func = 1; addr = 128;  
+|
+halcheck: *W,TRUNCZ (./As_tb.v,27|0): Truncation in constant conversion without a loss of bits in module/design-unit pipe2_test.
+       #5 rs1 = 10;  rs2 = 5; rd = 14; func = 1; addr = 128;  
+|
+halcheck: *W,CONSBS (./As_tb.v,27|0): Base ('d, 'b, 'h, 'o) not specified for constant 10 in module/design-unit pipe2_test.
+       #5 rs1 = 10;  rs2 = 5; rd = 14; func = 1; addr = 128;  
+|
+halcheck: *W,SEPLIN (./As_tb.v,27|0): Use a separate line for each HDL statement.
+       #5 rs1 = 10;  rs2 = 5; rd = 14; func = 1; addr = 128;  
+|
+halcheck: *W,IMPDTC (./As_tb.v,27|0): Expression '5' implicitly converted to type 'unsigned' from type 'signed' in module/design-unit pipe2_test.
+       #5 rs1 = 10;  rs2 = 5; rd = 14; func = 1; addr = 128;  
+|
+halcheck: *W,CONSBS (./As_tb.v,27|0): Base ('d, 'b, 'h, 'o) not specified for constant 5 in module/design-unit pipe2_test.
+       #5 rs1 = 10;  rs2 = 5; rd = 14; func = 1; addr = 128;  
+|
+halcheck: *W,IMPDTC (./As_tb.v,27|0): Expression '14' implicitly converted to type 'unsigned' from type 'signed' in module/design-unit pipe2_test.
+       #5 rs1 = 10;  rs2 = 5; rd = 14; func = 1; addr = 128;  
+|
+halcheck: *W,CONSBS (./As_tb.v,27|0): Base ('d, 'b, 'h, 'o) not specified for constant 14 in module/design-unit pipe2_test.
+       #5 rs1 = 10;  rs2 = 5; rd = 14; func = 1; addr = 128;  
+|
+halcheck: *W,IMPDTC (./As_tb.v,27|0): Expression '1' implicitly converted to type 'unsigned' from type 'signed' in module/design-unit pipe2_test.
+       #5 rs1 = 10;  rs2 = 5; rd = 14; func = 1; addr = 128;  
+|
+halcheck: *W,IMPDTC (./As_tb.v,27|0): Expression '128' implicitly converted to type 'unsigned' from type 'signed' in module/design-unit pipe2_test.
+       #5 rs1 = 10;  rs2 = 5; rd = 14; func = 1; addr = 128;  
+|
+halcheck: *W,CONSBS (./As_tb.v,27|0): Base ('d, 'b, 'h, 'o) not specified for constant 128 in module/design-unit pipe2_test.
+       #5 rs1 = 7;  rs2 = 3; rd = 13; func = 11; addr = 127;  
+|
+halcheck: *W,IMPDTC (./As_tb.v,28|0): Expression '7' implicitly converted to type 'unsigned' from type 'signed' in module/design-unit pipe2_test.
+       #5 rs1 = 7;  rs2 = 3; rd = 13; func = 11; addr = 127;  
+|
+halcheck: *W,TRUNCZ (./As_tb.v,28|0): Truncation in constant conversion without a loss of bits in module/design-unit pipe2_test.
+       #5 rs1 = 7;  rs2 = 3; rd = 13; func = 11; addr = 127;  
+|
+halcheck: *W,CONSBS (./As_tb.v,28|0): Base ('d, 'b, 'h, 'o) not specified for constant 7 in module/design-unit pipe2_test.
+       #5 rs1 = 7;  rs2 = 3; rd = 13; func = 11; addr = 127;  
+|
+halcheck: *W,SEPLIN (./As_tb.v,28|0): Use a separate line for each HDL statement.
+       #5 rs1 = 7;  rs2 = 3; rd = 13; func = 11; addr = 127;  
+|
+halcheck: *W,IMPDTC (./As_tb.v,28|0): Expression '3' implicitly converted to type 'unsigned' from type 'signed' in module/design-unit pipe2_test.
+       #5 rs1 = 7;  rs2 = 3; rd = 13; func = 11; addr = 127;  
+|
+halcheck: *W,CONSBS (./As_tb.v,28|0): Base ('d, 'b, 'h, 'o) not specified for constant 3 in module/design-unit pipe2_test.
+       #5 rs1 = 7;  rs2 = 3; rd = 13; func = 11; addr = 127;  
+|
+halcheck: *W,IMPDTC (./As_tb.v,28|0): Expression '13' implicitly converted to type 'unsigned' from type 'signed' in module/design-unit pipe2_test.
+       #5 rs1 = 7;  rs2 = 3; rd = 13; func = 11; addr = 127;  
+|
+halcheck: *W,CONSBS (./As_tb.v,28|0): Base ('d, 'b, 'h, 'o) not specified for constant 13 in module/design-unit pipe2_test.
+       #5 rs1 = 7;  rs2 = 3; rd = 13; func = 11; addr = 127;  
+|
+halcheck: *W,IMPDTC (./As_tb.v,28|0): Expression '11' implicitly converted to type 'unsigned' from type 'signed' in module/design-unit pipe2_test.
+       #5 rs1 = 7;  rs2 = 3; rd = 13; func = 11; addr = 127;  
+|
+halcheck: *W,CONSBS (./As_tb.v,28|0): Base ('d, 'b, 'h, 'o) not specified for constant 11 in module/design-unit pipe2_test.
+       #5 rs1 = 7;  rs2 = 3; rd = 13; func = 11; addr = 127;  
+|
+halcheck: *W,IMPDTC (./As_tb.v,28|0): Expression '127' implicitly converted to type 'unsigned' from type 'signed' in module/design-unit pipe2_test.
+       #5 rs1 = 7;  rs2 = 3; rd = 13; func = 11; addr = 127;  
+|
+halcheck: *W,CONSBS (./As_tb.v,28|0): Base ('d, 'b, 'h, 'o) not specified for constant 127 in module/design-unit pipe2_test.
+       #5 rs1 = 10;  rs2 = 5; rd = 15; func = 1; addr = 129;  
+|
+halcheck: *W,IMPDTC (./As_tb.v,29|0): Expression '10' implicitly converted to type 'unsigned' from type 'signed' in module/design-unit pipe2_test.
+       #5 rs1 = 10;  rs2 = 5; rd = 15; func = 1; addr = 129;  
+|
+halcheck: *W,TRUNCZ (./As_tb.v,29|0): Truncation in constant conversion without a loss of bits in module/design-unit pipe2_test.
+       #5 rs1 = 10;  rs2 = 5; rd = 15; func = 1; addr = 129;  
+|
+halcheck: *W,CONSBS (./As_tb.v,29|0): Base ('d, 'b, 'h, 'o) not specified for constant 10 in module/design-unit pipe2_test.
+       #5 rs1 = 10;  rs2 = 5; rd = 15; func = 1; addr = 129;  
+|
+halcheck: *W,SEPLIN (./As_tb.v,29|0): Use a separate line for each HDL statement.
+       #5 rs1 = 10;  rs2 = 5; rd = 15; func = 1; addr = 129;  
+|
+halcheck: *W,IMPDTC (./As_tb.v,29|0): Expression '5' implicitly converted to type 'unsigned' from type 'signed' in module/design-unit pipe2_test.
+       #5 rs1 = 10;  rs2 = 5; rd = 15; func = 1; addr = 129;  
+|
+halcheck: *W,CONSBS (./As_tb.v,29|0): Base ('d, 'b, 'h, 'o) not specified for constant 5 in module/design-unit pipe2_test.
+       #5 rs1 = 10;  rs2 = 5; rd = 15; func = 1; addr = 129;  
+|
+halcheck: *W,IMPDTC (./As_tb.v,29|0): Expression '15' implicitly converted to type 'unsigned' from type 'signed' in module/design-unit pipe2_test.
+       #5 rs1 = 10;  rs2 = 5; rd = 15; func = 1; addr = 129;  
+|
+halcheck: *W,CONSBS (./As_tb.v,29|0): Base ('d, 'b, 'h, 'o) not specified for constant 15 in module/design-unit pipe2_test.
+       #5 rs1 = 10;  rs2 = 5; rd = 15; func = 1; addr = 129;  
+|
+halcheck: *W,IMPDTC (./As_tb.v,29|0): Expression '1' implicitly converted to type 'unsigned' from type 'signed' in module/design-unit pipe2_test.
+       #5 rs1 = 10;  rs2 = 5; rd = 15; func = 1; addr = 129;  
+|
+halcheck: *W,IMPDTC (./As_tb.v,29|0): Expression '129' implicitly converted to type 'unsigned' from type 'signed' in module/design-unit pipe2_test.
+       #5 rs1 = 10;  rs2 = 5; rd = 15; func = 1; addr = 129;  
+|
+halcheck: *W,CONSBS (./As_tb.v,29|0): Base ('d, 'b, 'h, 'o) not specified for constant 129 in module/design-unit pipe2_test.
+       #5 rs1 = 12;  rs2 = 13; rd = 16; func = 0; addr = 130;   
+|
+halcheck: *W,IMPDTC (./As_tb.v,30|0): Expression '12' implicitly converted to type 'unsigned' from type 'signed' in module/design-unit pipe2_test.
+       #5 rs1 = 12;  rs2 = 13; rd = 16; func = 0; addr = 130;   
+|
+halcheck: *W,TRUNCZ (./As_tb.v,30|0): Truncation in constant conversion without a loss of bits in module/design-unit pipe2_test.
+       #5 rs1 = 12;  rs2 = 13; rd = 16; func = 0; addr = 130;   
+|
+halcheck: *W,CONSBS (./As_tb.v,30|0): Base ('d, 'b, 'h, 'o) not specified for constant 12 in module/design-unit pipe2_test.
+       #5 rs1 = 12;  rs2 = 13; rd = 16; func = 0; addr = 130;   
+|
+halcheck: *W,SEPLIN (./As_tb.v,30|0): Use a separate line for each HDL statement.
+       #5 rs1 = 12;  rs2 = 13; rd = 16; func = 0; addr = 130;   
+|
+halcheck: *W,IMPDTC (./As_tb.v,30|0): Expression '13' implicitly converted to type 'unsigned' from type 'signed' in module/design-unit pipe2_test.
+       #5 rs1 = 12;  rs2 = 13; rd = 16; func = 0; addr = 130;   
+|
+halcheck: *W,CONSBS (./As_tb.v,30|0): Base ('d, 'b, 'h, 'o) not specified for constant 13 in module/design-unit pipe2_test.
+       #5 rs1 = 12;  rs2 = 13; rd = 16; func = 0; addr = 130;   
+|
+halcheck: *W,IMPDTC (./As_tb.v,30|0): Expression '16' implicitly converted to type 'unsigned' from type 'signed' in module/design-unit pipe2_test.
+       #5 rs1 = 12;  rs2 = 13; rd = 16; func = 0; addr = 130;   
+|
+halcheck: *W,TRUNCC (./As_tb.v,30|0): Truncation of bits in a constant in module/design-unit pipe2_test.  The most significant bits are lost.
+       #5 rs1 = 12;  rs2 = 13; rd = 16; func = 0; addr = 130;   
+|
+halcheck: *W,CONSBS (./As_tb.v,30|0): Base ('d, 'b, 'h, 'o) not specified for constant 16 in module/design-unit pipe2_test.
+       #5 rs1 = 12;  rs2 = 13; rd = 16; func = 0; addr = 130;   
+|
+halcheck: *W,IMPDTC (./As_tb.v,30|0): Expression '0' implicitly converted to type 'unsigned' from type 'signed' in module/design-unit pipe2_test.
+       #5 rs1 = 12;  rs2 = 13; rd = 16; func = 0; addr = 130;   
+|
+halcheck: *W,IMPDTC (./As_tb.v,30|0): Expression '130' implicitly converted to type 'unsigned' from type 'signed' in module/design-unit pipe2_test.
+       #5 rs1 = 12;  rs2 = 13; rd = 16; func = 0; addr = 130;   
+|
+halcheck: *W,CONSBS (./As_tb.v,30|0): Base ('d, 'b, 'h, 'o) not specified for constant 130 in module/design-unit pipe2_test.
+           $display("Mem[%3d] = %3d",k, MYPIPE.mem[k]); 
+|
+halcheck: *W,BADSYS (./As_tb.v,33|0): System task $display in module 'pipe2_test' is ignored.
+    begin
+|
+halcheck: *W,NOBLKN (./As_tb.v,36|0): Each block should be labeled with a meaningful name.
+       $dumpfile("pipe2.vcd");
+|
+halcheck: *W,BADSYS (./As_tb.v,37|0): System task $dumpfile in module 'pipe2_test' is ignored.
+       $dumpvars(0, pipe2_test);
+|
+halcheck: *W,BADSYS (./As_tb.v,38|0): System task $dumpvars in module 'pipe2_test' is ignored.
+       $monitor ("Time: %3d, F= %3d",$time,z);
+|
+halcheck: *W,BADSYS (./As_tb.v,39|0): System task $monitor in module 'pipe2_test' is ignored.
+       #300 $finish;
+|
+halcheck: *W,BADSYS (./As_tb.v,40|0): System task $finish in module 'pipe2_test' is ignored.
+pipe_ex2 MYPIPE(z,rs1,rs2,rd,func,addr,clk1,clk2);
+|
+halcheck: *W,LCVARN (./As_tb.v,8|0): Module instance name 'MYPIPE' uses uppercase characters.
+module pipe_ex2(Zout,rs1,rs2,rd,func,addr,clk1,clk2);
+|
+halcheck: *W,DIFFMN (./As_tb.v,47|0): Module name 'pipe_ex2' differs from file name 'As_tb.v'.
+module pipe_ex2(Zout,rs1,rs2,rd,func,addr,clk1,clk2);
+|
+halcheck: *W,MULTMF (./As_tb.v,47|0): More than one design-unit definition in file 'As_tb.v'.
+module pipe_ex2(Zout,rs1,rs2,rd,func,addr,clk1,clk2);
+|
+halcheck: *N,PRTCNT (./As_tb.v,47|0): Module/Entity 'pipe_ex2' contains '8' ports.
+halcheck: (./As_tb.v,47): Number of Input ports: 7.
+halcheck: (./As_tb.v,47): Number of Output ports: 1.
+input [3:0] rs1,rs2,rd,func;
+|
+halcheck: *W,NUMSUF (./As_tb.v,48|0): Identifier 'rs1' has a numeric value suffix.
+input [3:0] rs1,rs2,rd,func;
+|
+halcheck: *W,STYVAL (./As_tb.v,48|0): Numeric value '3' used for identifier 'rs1'. Use constants to avoid portability issues.
+input [3:0] rs1,rs2,rd,func;
+|
+halcheck: *W,NUMSUF (./As_tb.v,48|0): Identifier 'rs2' has a numeric value suffix.
+input [3:0] rs1,rs2,rd,func;
+|
+halcheck: *N,DECLIN (./As_tb.v,48|0): Use a separate line for each HDL declaration.
+input [7:0] addr;
+|
+halcheck: *W,STYVAL (./As_tb.v,49|0): Numeric value '7' used for identifier 'addr'. Use constants to avoid portability issues.
+input clk1,clk2;
+|
+halcheck: *N,DECLIN (./As_tb.v,50|0): Use a separate line for each HDL declaration.
+output [15:0] Zout;
+|
+halcheck: *W,STYVAL (./As_tb.v,51|0): Numeric value '15' used for identifier 'Zout'. Use constants to avoid portability issues.
+output [15:0] Zout;
+|
+halcheck: *W,LCVARN (./As_tb.v,51|0): Net name 'Zout' uses uppercase characters.
+reg [15:0] L12_A,L12_B,L23_Z,L34_Z;
+|
+halcheck: *W,LCVARN (./As_tb.v,52|0): Register name 'L12_A' uses uppercase characters.
+reg [15:0] L12_A,L12_B,L23_Z,L34_Z;
+|
+halcheck: *W,STYVAL (./As_tb.v,52|0): Numeric value '15' used for identifier 'L12_A'. Use constants to avoid portability issues.
+reg [15:0] L12_A,L12_B,L23_Z,L34_Z;
+|
+halcheck: *W,LCVARN (./As_tb.v,52|0): Register name 'L12_B' uses uppercase characters.
+reg [15:0] L12_A,L12_B,L23_Z,L34_Z;
+|
+halcheck: *W,LCVARN (./As_tb.v,52|0): Register name 'L23_Z' uses uppercase characters.
+reg [15:0] L12_A,L12_B,L23_Z,L34_Z;
+|
+halcheck: *W,LCVARN (./As_tb.v,52|0): Register name 'L34_Z' uses uppercase characters.
+reg [3:0] L12_rd,L12_func,L23_rd;
+|
+halcheck: *W,LCVARN (./As_tb.v,53|0): Register name 'L12_rd' uses uppercase characters.
+reg [3:0] L12_rd,L12_func,L23_rd;
+|
+halcheck: *W,STYVAL (./As_tb.v,53|0): Numeric value '3' used for identifier 'L12_rd'. Use constants to avoid portability issues.
+reg [3:0] L12_rd,L12_func,L23_rd;
+|
+halcheck: *W,LCVARN (./As_tb.v,53|0): Register name 'L12_func' uses uppercase characters.
+reg [3:0] L12_rd,L12_func,L23_rd;
+|
+halcheck: *W,LCVARN (./As_tb.v,53|0): Register name 'L23_rd' uses uppercase characters.
+reg [7:0] L12_addr,L23_addr,L34_addr;
+|
+halcheck: *W,LCVARN (./As_tb.v,54|0): Register name 'L12_addr' uses uppercase characters.
+reg [7:0] L12_addr,L23_addr,L34_addr;
+|
+halcheck: *W,STYVAL (./As_tb.v,54|0): Numeric value '7' used for identifier 'L12_addr'. Use constants to avoid portability issues.
+reg [7:0] L12_addr,L23_addr,L34_addr;
+|
+halcheck: *W,LCVARN (./As_tb.v,54|0): Register name 'L23_addr' uses uppercase characters.
+reg [7:0] L12_addr,L23_addr,L34_addr;
+|
+halcheck: *W,LCVARN (./As_tb.v,54|0): Register name 'L34_addr' uses uppercase characters.
+reg [15:0] regbank [0:15];
+|
+halcheck: *W,STYVAL (./As_tb.v,55|0): Numeric value '15' used for identifier 'regbank'. Use constants to avoid portability issues.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,STYVAL (./As_tb.v,56|0): Numeric value '15' used for identifier 'mem'. Use constants to avoid portability issues.
+begin
+|
+halcheck: *W,NOBLKN (./As_tb.v,60|0): Each block should be labeled with a meaningful name.
+L12_A <= #2 regbank[rs1];
+|
+halcheck: *W,DLNBLK (./As_tb.v,61|0): Delay in non-blocking assignment; delay will be ignored.
+L12_B <= #2 regbank[rs2];
+|
+halcheck: *W,DLNBLK (./As_tb.v,62|0): Delay in non-blocking assignment; delay will be ignored.
+L12_rd <= #2 rd;
+|
+halcheck: *W,DLNBLK (./As_tb.v,63|0): Delay in non-blocking assignment; delay will be ignored.
+L12_func <= #2 func;
+|
+halcheck: *W,DLNBLK (./As_tb.v,64|0): Delay in non-blocking assignment; delay will be ignored.
+L12_addr <= #2 addr;
+|
+halcheck: *W,DLNBLK (./As_tb.v,65|0): Delay in non-blocking assignment; delay will be ignored.
+begin
+|
+halcheck: *W,NOBLKN (./As_tb.v,69|0): Each block should be labeled with a meaningful name.
+   0:L23_Z <= #2 L12_A + L12_B;
+|
+halcheck: *W,UELCIT (./As_tb.v,71|0): Unequal length in case item comparison (selector is 4 bits, case tag expression is 32 bits) in module/design-unit MYPIPE.
+   1:L23_Z <= #2 L12_A - L12_B;
+|
+halcheck: *W,UELCIT (./As_tb.v,72|0): Unequal length in case item comparison (selector is 4 bits, case tag expression is 32 bits) in module/design-unit MYPIPE.
+   2:L23_Z <= #2 L12_A * L12_B;
+|
+halcheck: *W,UELCIT (./As_tb.v,73|0): Unequal length in case item comparison (selector is 4 bits, case tag expression is 32 bits) in module/design-unit MYPIPE.
+   3:L23_Z <= #2 L12_A;
+|
+halcheck: *W,UELCIT (./As_tb.v,74|0): Unequal length in case item comparison (selector is 4 bits, case tag expression is 32 bits) in module/design-unit MYPIPE.
+   4:L23_Z <= #2 L12_B;
+|
+halcheck: *W,UELCIT (./As_tb.v,75|0): Unequal length in case item comparison (selector is 4 bits, case tag expression is 32 bits) in module/design-unit MYPIPE.
+   5:L23_Z <= #2 L12_A & L12_B;
+|
+halcheck: *W,UELCIT (./As_tb.v,76|0): Unequal length in case item comparison (selector is 4 bits, case tag expression is 32 bits) in module/design-unit MYPIPE.
+   6:L23_Z <= #2 L12_A | L12_B;
+|
+halcheck: *W,UELCIT (./As_tb.v,77|0): Unequal length in case item comparison (selector is 4 bits, case tag expression is 32 bits) in module/design-unit MYPIPE.
+   7:L23_Z <= #2 L12_A ^ L12_B;
+|
+halcheck: *W,UELCIT (./As_tb.v,78|0): Unequal length in case item comparison (selector is 4 bits, case tag expression is 32 bits) in module/design-unit MYPIPE.
+   8:L23_Z <= #2 -L12_A;
+|
+halcheck: *W,UELCIT (./As_tb.v,79|0): Unequal length in case item comparison (selector is 4 bits, case tag expression is 32 bits) in module/design-unit MYPIPE.
+   9:L23_Z <= #2 -L12_B;
+|
+halcheck: *W,UELCIT (./As_tb.v,80|0): Unequal length in case item comparison (selector is 4 bits, case tag expression is 32 bits) in module/design-unit MYPIPE.
+   10:L23_Z <= #2 L12_A >>1;
+|
+halcheck: *W,UELCIT (./As_tb.v,81|0): Unequal length in case item comparison (selector is 4 bits, case tag expression is 32 bits) in module/design-unit MYPIPE.
+   11:L23_Z <= #2 L12_A <<1;
+|
+halcheck: *W,UELCIT (./As_tb.v,82|0): Unequal length in case item comparison (selector is 4 bits, case tag expression is 32 bits) in module/design-unit MYPIPE.
+   0:L23_Z <= #2 L12_A + L12_B;
+|
+halcheck: *W,DLNBLK (./As_tb.v,71|0): Delay in non-blocking assignment; delay will be ignored.
+   0:L23_Z <= #2 L12_A + L12_B;
+|
+halcheck: *W,POIASG (./As_tb.v,71|0): The result of addition operation may lead to a potential overflow in module/design-unit MYPIPE.
+halcheck: (./As_tb.v,71): LHS operand 'L23_Z' is 16 bit(s), RHS operand 'L12_A + L12_B' is 17 bit(s).
+halcheck: (./As_tb.v,71): Increase the size of LHS by 1 bit(s).
+   0:L23_Z <= #2 L12_A + L12_B;
+|
+halcheck: *W,LRGOPR (./As_tb.v,71|0): Arithmetic or relational operation performed on large operands in module/design-unit MYPIPE.
+   1:L23_Z <= #2 L12_A - L12_B;
+|
+halcheck: *W,DLNBLK (./As_tb.v,72|0): Delay in non-blocking assignment; delay will be ignored.
+   1:L23_Z <= #2 L12_A - L12_B;
+|
+halcheck: *W,LRGOPR (./As_tb.v,72|0): Arithmetic or relational operation performed on large operands in module/design-unit MYPIPE.
+   2:L23_Z <= #2 L12_A * L12_B;
+|
+halcheck: *W,DLNBLK (./As_tb.v,73|0): Delay in non-blocking assignment; delay will be ignored.
+   3:L23_Z <= #2 L12_A;
+|
+halcheck: *W,DLNBLK (./As_tb.v,74|0): Delay in non-blocking assignment; delay will be ignored.
+   4:L23_Z <= #2 L12_B;
+|
+halcheck: *W,DLNBLK (./As_tb.v,75|0): Delay in non-blocking assignment; delay will be ignored.
+   5:L23_Z <= #2 L12_A & L12_B;
+|
+halcheck: *W,DLNBLK (./As_tb.v,76|0): Delay in non-blocking assignment; delay will be ignored.
+   6:L23_Z <= #2 L12_A | L12_B;
+|
+halcheck: *W,DLNBLK (./As_tb.v,77|0): Delay in non-blocking assignment; delay will be ignored.
+   7:L23_Z <= #2 L12_A ^ L12_B;
+|
+halcheck: *W,DLNBLK (./As_tb.v,78|0): Delay in non-blocking assignment; delay will be ignored.
+   8:L23_Z <= #2 -L12_A;
+|
+halcheck: *W,SGNUSG (./As_tb.v,79|0): Negative value '-L12_A' assigned to an unsigned variable 'L23_Z' in module/design-unit MYPIPE.
+   8:L23_Z <= #2 -L12_A;
+|
+halcheck: *W,DLNBLK (./As_tb.v,79|0): Delay in non-blocking assignment; delay will be ignored.
+halcheck: (./As_tb.v,79): LHS 'L23_Z' (unsigned) - 16 bit(s), RHS '-L12_A' (signed) - 17 bit(s)..
+   9:L23_Z <= #2 -L12_B;
+|
+halcheck: *W,SGNUSG (./As_tb.v,80|0): Negative value '-L12_B' assigned to an unsigned variable 'L23_Z' in module/design-unit MYPIPE.
+   9:L23_Z <= #2 -L12_B;
+|
+halcheck: *W,DLNBLK (./As_tb.v,80|0): Delay in non-blocking assignment; delay will be ignored.
+halcheck: (./As_tb.v,80): LHS 'L23_Z' (unsigned) - 16 bit(s), RHS '-L12_B' (signed) - 17 bit(s)..
+   10:L23_Z <= #2 L12_A >>1;
+|
+halcheck: *W,DLNBLK (./As_tb.v,81|0): Delay in non-blocking assignment; delay will be ignored.
+   11:L23_Z <= #2 L12_A <<1;
+|
+halcheck: *W,DLNBLK (./As_tb.v,82|0): Delay in non-blocking assignment; delay will be ignored.
+   11:L23_Z <= #2 L12_A <<1;
+|
+halcheck: *W,SHFTOF (./As_tb.v,82|0): Shift overflow in module/design-unit MYPIPE, some bits will be lost.
+   default: L23_Z <=#2 16'hxxxx;
+|
+halcheck: *W,DLNBLK (./As_tb.v,83|0): Delay in non-blocking assignment; delay will be ignored.
+   L23_rd <= #2 L12_rd;
+|
+halcheck: *W,DLNBLK (./As_tb.v,85|0): Delay in non-blocking assignment; delay will be ignored.
+begin
+|
+halcheck: *W,NOBLKN (./As_tb.v,89|0): Each block should be labeled with a meaningful name.
+ regbank[L23_rd] <= #2 L23_Z ;
+|
+halcheck: *W,DLNBLK (./As_tb.v,90|0): Delay in non-blocking assignment; delay will be ignored.
+ L34_Z  <= #2 L23_Z;
+|
+halcheck: *W,DLNBLK (./As_tb.v,91|0): Delay in non-blocking assignment; delay will be ignored.
+ L34_addr <= #2 L23_addr;
+|
+halcheck: *W,DLNBLK (./As_tb.v,92|0): Delay in non-blocking assignment; delay will be ignored.
+begin
+|
+halcheck: *W,NOBLKN (./As_tb.v,95|0): Each block should be labeled with a meaningful name.
+ mem[L34_addr] <= #2 L34_Z;
+|
+halcheck: *W,DLNBLK (./As_tb.v,96|0): Delay in non-blocking assignment; delay will be ignored.
+reg [3:0] L12_rd,L12_func,L23_rd;
+|
+halcheck: *W,URDREG (./As_tb.v,53|0): Local register variable 'L12_func' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[0]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[1]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[2]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[3]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[4]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[5]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[6]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[7]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[8]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[9]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[10]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[11]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[12]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[13]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[14]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[15]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[16]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[17]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[18]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[19]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[20]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[21]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[22]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[23]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[24]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[25]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[26]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[27]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[28]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[29]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[30]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[31]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[32]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[33]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[34]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[35]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[36]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[37]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[38]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[39]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[40]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[41]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[42]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[43]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[44]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[45]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[46]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[47]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[48]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[49]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[50]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[51]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[52]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[53]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[54]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[55]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[56]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[57]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[58]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[59]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[60]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[61]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[62]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[63]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[64]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[65]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[66]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[67]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[68]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[69]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[70]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[71]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[72]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[73]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[74]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[75]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[76]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[77]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[78]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[79]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[80]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[81]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[82]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[83]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[84]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[85]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[86]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[87]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[88]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[89]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[90]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[91]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[92]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[93]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[94]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[95]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[96]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[97]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[98]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[99]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[100]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[101]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[102]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[103]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[104]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[105]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[106]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[107]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[108]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[109]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[110]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[111]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[112]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[113]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[114]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[115]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[116]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[117]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[118]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[119]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[120]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[121]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[122]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[123]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[124]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[125]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[126]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[127]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[128]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[129]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[130]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[131]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[132]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[133]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[134]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[135]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[136]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[137]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[138]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[139]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[140]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[141]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[142]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[143]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[144]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[145]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[146]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[147]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[148]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[149]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[150]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[151]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[152]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[153]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[154]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[155]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[156]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[157]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[158]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[159]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[160]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[161]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[162]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[163]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[164]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[165]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[166]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[167]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[168]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[169]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[170]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[171]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[172]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[173]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[174]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[175]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[176]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[177]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[178]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[179]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[180]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[181]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[182]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[183]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[184]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[185]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[186]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[187]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[188]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[189]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[190]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[191]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[192]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[193]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[194]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[195]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[196]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[197]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[198]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[199]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[200]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[201]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[202]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[203]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[204]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[205]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[206]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[207]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[208]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[209]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[210]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[211]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[212]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[213]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[214]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[215]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[216]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[217]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[218]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[219]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[220]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[221]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[222]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[223]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[224]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[225]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[226]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[227]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[228]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[229]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[230]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[231]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[232]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[233]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[234]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[235]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[236]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[237]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[238]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[239]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[240]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[241]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[242]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[243]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[244]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[245]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[246]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[247]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[248]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[249]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[250]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[251]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[252]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[253]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[254]' is not read, but is assigned at least once in module 'pipe_ex2'.
+reg[15:0] mem [0:255];
+|
+halcheck: *W,URDREG (./As_tb.v,56|0): Local register variable 'mem[255]' is not read, but is assigned at least once in module 'pipe_ex2'.
+halcheck: Total errors   = 0.
+halcheck: Total warnings = 428.
+
+  ==========================================================================
+Performing synthesizability checks 
+
+cfe64: 15.20.051-s(15.20.s051): (c) Copyright 1995 - 2018 Cadence Design Systems, Inc.
+cfe64 Build : Mon May  7 17:15:12 IST 2018 ldvopt246
+halsynth: Loading design snapshot....
+halsynth: Traversing design hierarchy....
+reg [15:0] regbank [0:15];
+|
+halsynth: *W,VLGMEM (./As_tb.v,55|0): Module pipe_ex2 has Verilog memories. For large memories, processing may take some time.
+reg[15:0] mem [0:255];
+|
+halsynth: *W,VLGMEM (./As_tb.v,56|0): Module pipe_ex2 has Verilog memories. For large memories, processing may take some time.
+reg [15:0] regbank [0:15];
+|
+halsynth: *E,MUSOMR (./As_tb.v,55|0): Memory has unsupported OOMR assignments in the design.
+L12_A <= #2 regbank[rs1];
+|
+halsynth: *W,IGNDLY (./As_tb.v,61|0): Lumped delay in module 'pipe_ex2' is ignored.
+L12_B <= #2 regbank[rs2];
+|
+halsynth: *W,IGNDLY (./As_tb.v,62|0): Lumped delay in module 'pipe_ex2' is ignored.
+L12_rd <= #2 rd;
+|
+halsynth: *W,IGNDLY (./As_tb.v,63|0): Lumped delay in module 'pipe_ex2' is ignored.
+L12_func <= #2 func;
+|
+halsynth: *W,IGNDLY (./As_tb.v,64|0): Lumped delay in module 'pipe_ex2' is ignored.
+L12_addr <= #2 addr;
+|
+halsynth: *W,IGNDLY (./As_tb.v,65|0): Lumped delay in module 'pipe_ex2' is ignored.
+   0:L23_Z <= #2 L12_A + L12_B;
+|
+halsynth: *W,IGNDLY (./As_tb.v,71|0): Lumped delay in module 'pipe_ex2' is ignored.
+   1:L23_Z <= #2 L12_A - L12_B;
+|
+halsynth: *W,IGNDLY (./As_tb.v,72|0): Lumped delay in module 'pipe_ex2' is ignored.
+   2:L23_Z <= #2 L12_A * L12_B;
+|
+halsynth: *W,IGNDLY (./As_tb.v,73|0): Lumped delay in module 'pipe_ex2' is ignored.
+   3:L23_Z <= #2 L12_A;
+|
+halsynth: *W,IGNDLY (./As_tb.v,74|0): Lumped delay in module 'pipe_ex2' is ignored.
+   4:L23_Z <= #2 L12_B;
+|
+halsynth: *W,IGNDLY (./As_tb.v,75|0): Lumped delay in module 'pipe_ex2' is ignored.
+   5:L23_Z <= #2 L12_A & L12_B;
+|
+halsynth: *W,IGNDLY (./As_tb.v,76|0): Lumped delay in module 'pipe_ex2' is ignored.
+   6:L23_Z <= #2 L12_A | L12_B;
+|
+halsynth: *W,IGNDLY (./As_tb.v,77|0): Lumped delay in module 'pipe_ex2' is ignored.
+   7:L23_Z <= #2 L12_A ^ L12_B;
+|
+halsynth: *W,IGNDLY (./As_tb.v,78|0): Lumped delay in module 'pipe_ex2' is ignored.
+   8:L23_Z <= #2 -L12_A;
+|
+halsynth: *W,IGNDLY (./As_tb.v,79|0): Lumped delay in module 'pipe_ex2' is ignored.
+   9:L23_Z <= #2 -L12_B;
+|
+halsynth: *W,IGNDLY (./As_tb.v,80|0): Lumped delay in module 'pipe_ex2' is ignored.
+   10:L23_Z <= #2 L12_A >>1;
+|
+halsynth: *W,IGNDLY (./As_tb.v,81|0): Lumped delay in module 'pipe_ex2' is ignored.
+   11:L23_Z <= #2 L12_A <<1;
+|
+halsynth: *W,IGNDLY (./As_tb.v,82|0): Lumped delay in module 'pipe_ex2' is ignored.
+   default: L23_Z <=#2 16'hxxxx;
+|
+halsynth: *W,IGNDLY (./As_tb.v,83|0): Lumped delay in module 'pipe_ex2' is ignored.
+   L23_rd <= #2 L12_rd;
+|
+halsynth: *W,IGNDLY (./As_tb.v,85|0): Lumped delay in module 'pipe_ex2' is ignored.
+ regbank[L23_rd] <= #2 L23_Z ;
+|
+halsynth: *W,IGNDLY (./As_tb.v,90|0): Lumped delay in module 'pipe_ex2' is ignored.
+ L34_Z  <= #2 L23_Z;
+|
+halsynth: *W,IGNDLY (./As_tb.v,91|0): Lumped delay in module 'pipe_ex2' is ignored.
+ L34_addr <= #2 L23_addr;
+|
+halsynth: *W,IGNDLY (./As_tb.v,92|0): Lumped delay in module 'pipe_ex2' is ignored.
+ mem[L34_addr] <= #2 L34_Z;
+|
+halsynth: *W,IGNDLY (./As_tb.v,96|0): Lumped delay in module 'pipe_ex2' is ignored.
+initial 
+|
+halsynth: *W,INIUSP (./As_tb.v,9|0): Module pipe2_test has an initial block or a variable declaration assignment, which is ignored by synthesis tools.
+initial
+|
+halsynth: *W,INIUSP (./As_tb.v,19|0): Module pipe2_test has an initial block or a variable declaration assignment, which is ignored by synthesis tools.
+initial
+|
+halsynth: *W,INIUSP (./As_tb.v,23|0): Module pipe2_test has an initial block or a variable declaration assignment, which is ignored by synthesis tools.
+initial
+|
+halsynth: *W,INIUSP (./As_tb.v,35|0): Module pipe2_test has an initial block or a variable declaration assignment, which is ignored by synthesis tools.
+halsynth: Total errors   = 1.
+halsynth: Total warnings = 29.
+hal: *E,BLDSTP: Further processing stopped because of synthesizability errors.
+
+Analysis summary :
+
+ Errors   : (2)
+  BLDSTP (1)      MUSOMR (1)     
+
+ Warnings : (457)
+  BADSYS (5)      CBYNAM (1)      CONSBS (26)     DIFFMN (2)     
+  DLNBLK (23)     IGNDLY (23)     IMPDTC (36)     INIMEM (1)     
+  INIUSP (4)      INTTOB (3)      LCVARN (12)     LRGOPR (2)     
+  MULTMF (1)      NEEDIO (1)      NOBLKN (7)      NUMSUF (4)     
+  POIASG (1)      SEPLIN (9)      SGNUSG (2)      SHFTOF (1)     
+  STYVAL (11)     TRUNCC (1)      TRUNCZ (9)      UEASTR (1)     
+  UELCIT (12)     URDREG (257)    VLGMEM (2)     
+
+ Notes    : (3)
+  DECLIN (2)      PRTCNT (1)     
+
+Analysis failed.
+
+ ==========================================================================
+
+To analyze results, run following command :
+    ncbrowse -64bit -cdslib /home/adld25/Ass_two/cds.lib -sortby severity -sortby category -sortby tag hal.log
+
