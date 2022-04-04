@@ -1,0 +1,2 @@
+define worklib /home/adld25/01fe19bec096/and_gates/INCA_libs/worklib
+include $CDS_INST_DIR/tools/inca/files/cds.lib
