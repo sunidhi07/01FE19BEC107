@@ -1,0 +1,92 @@
+Cadence Genus(TM) Synthesis Solution.
+Copyright 2017 Cadence Design Systems, Inc. All rights reserved worldwide.
+Cadence and the Cadence logo are registered trademarks and Genus is a trademark
+of Cadence Design Systems, Inc. in the United States and other countries.
+
+Version: 17.22-s017_1, built Sun Apr 01 2018
+Options: 
+Date:    Mon Apr 11 12:39:20 2022
+Host:    VLSI38 (x86_64 w/Linux 2.6.32-754.30.2.el6.x86_64) (4cores*8cpus*1physical cpu*Intel(R) Core(TM) i7-6700 CPU @ 3.40GHz 8192KB) (16300624KB)
+OS:      Red Hat Enterprise Linux Client release 6.10 (Santiago)
+
+Checking out license: Genus_Synthesis
+
+Loading tool scripts...
+
+Finished loading tool scripts (8 seconds elapsed).
+
+WARNING: This version of the tool is 1471 days old.
+@genus:root: 1> source syn.tcl
+Sourcing './syn.tcl' (Mon Apr 11 12:40:22 IST 2022)...
+#@ Begin verbose source syn.tcl
+@file(syn.tcl) 2: read_hdl square_root.v
+@file(syn.tcl) 3: read_libs /cad_area/cad/FOUNDRY/digital/180nm/dig/lib/slow.lib
+
+Threads Configured:3
+
+  Message Summary for Library slow.lib:
+  *************************************
+  Could not find an attribute in the library. [LBR-436]: 639
+  Missing a function attribute in the output pin definition. [LBR-518]: 1
+  An unsupported construct was detected in this library. [LBR-40]: 1
+  *************************************
+ 
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.000000, 1.620000, 125.000000) in library 'slow.lib'.
+        : The nominal operating condition represents either the nominal PVT values if specified in the library source, or the default PVT values (1.0, 1.0, 1.0).
+@file(syn.tcl) 4: elaborate upc
+Error   : Could not find an HDL design. [CDFG-210] [elaborate]
+        : The design is 'upc'.
+        : Ensure that the design exists or the correct file was loaded.
+#@ End verbose source syn.tcl
+1
+@genus:root: 2> source syn.tcl
+Sourcing './syn.tcl' (Mon Apr 11 12:41:34 IST 2022)...
+#@ Begin verbose source syn.tcl
+@file(syn.tcl) 2: read_hdl square_root.v
+module square_root
+                 |
+Warning : Replacing previously read Verilog description. [VLOGPT-6]
+        : Replacing Verilog description 'square_root' with Verilog module in file 'square_root.v' on line 1, column 18.
+        : A Verilog description is replaced when a new description of the same name and same library is read again.
+    Verilog descriptions are:
+       module
+       macromodule
+    SystemVerilog adds the following descriptions:
+       interface
+       program
+       package.
+Warning : Replacing previously read Verilog module or VHDL entity. [HPT-76]
+        : Replacing Verilog module 'square_root' in library 'default' with newly read Verilog module 'square_root' in the same library in file 'square_root.v' on line 1.
+        : A newly read VHDL entity replaces any previously read Verilog module or VHDL entity in the same library if its name matches (case-insensitively) the existing module or entity.
+    For instance:
+        VHDL 'foo'                  replaces  VHDL {'FOO' or 'foo' or 'Foo' or ...} in the same library
+        VHDL 'foo' (in any library) replaces  Verilog {'FOO' or 'foo' or 'Foo' or ...} in the same library
+ 
+A newly read Verilog module replaces any previously read Verilog module if its name matches (case-sensitively) that module.  Further, it replaces any previously read VHDL entity in the same library if its name matches (case -insensitively) that entity.
+    For instance:
+        Verilog 'foo' replaces    VHDL {'FOO' or 'foo' or 'Foo' or ...} in the same library
+        Verilog 'foo' replaces    Verilog 'foo' only
+    In addition:
+        Verilog 'foo' does not replace Verilog 'FOO' and the two remain as distinct modules.
+@file(syn.tcl) 3: read_libs /cad_area/cad/FOUNDRY/digital/180nm/dig/lib/slow.lib
+#@ End verbose source syn.tcl
+Cannot use read_libs after read_mmmc
+@genus:root: 3> genus
+invalid command name "genus"
+@genus:root: 4> clear
+@genus:root: 5> source syn.tcl
+Sourcing './syn.tcl' (Mon Apr 11 12:41:58 IST 2022)...
+#@ Begin verbose source syn.tcl
+@file(syn.tcl) 2: read_hdl square_root.v
+module square_root
+                 |
+Warning : Replacing previously read Verilog description. [VLOGPT-6]
+        : Replacing Verilog description 'square_root' with Verilog module in file 'square_root.v' on line 1, column 18.
+Warning : Replacing previously read Verilog module or VHDL entity. [HPT-76]
+        : Replacing Verilog module 'square_root' in library 'default' with newly read Verilog module 'square_root' in the same library in file 'square_root.v' on line 1.
+@file(syn.tcl) 3: read_libs /cad_area/cad/FOUNDRY/digital/180nm/dig/lib/slow.lib
+#@ End verbose source syn.tcl
+Cannot use read_libs after read_mmmc
+@genus:root: 6> run.tcl
+invalid command name "run.tcl"
