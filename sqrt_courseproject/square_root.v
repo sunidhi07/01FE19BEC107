@@ -8,7 +8,7 @@ module square_root
     );
 
     reg [N-1:0] a;   //original input.
-    reg [N/2+1:0] left,right;     //input to adder/sub.r-remainder.
+    reg [N/2+1:0] left,right;     
     reg signed [N/2+1:0] r;
     reg [N/2-1:0] q;    //result.
     integer i;   //index of the loop. 
