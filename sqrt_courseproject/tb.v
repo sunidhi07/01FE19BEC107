@@ -1,4 +1,4 @@
-module tb;  //testbench module is always empty. No input or output ports.
+module tb;  
 
 reg Clock, reset;
 wire done;
@@ -7,10 +7,9 @@ reg [N-1:0] num_in;
 reg [N:0] i;
 wire [N/2-1:0] sq_root;
 integer error,actual_result;  //this indicates the number of errors encountered during simulation.
-parameter Clock_period = 10;    //Change clock period here. 
+parameter Clock_period = 10;    //Change clock period 
 
-//Apply the inputs to the design and check if the results are correct. 
-//The number of inputs for which the results were wrongly calculated are counted by 'error'. 
+
 initial
 begin
     Clock = 1;
@@ -36,9 +35,9 @@ task apply_input;
     input [N:0] i;
 begin
     num_in = i[N-1:0];  
-    wait(~done);    //wait for the 'done' to finish its previous high state
-    wait(done); //wait until 'done' output goes High.
-    wait(~Clock);   //we sample the output at the falling edge of the clock.
+    wait(~done);    
+    wait(done); 
+    wait(~Clock);   
     actual_result = $rtoi($floor($pow(i,0.5))); //Calculate the actual result.
     //if actual result and calculated result are different increment 'error' by 1.
     if(actual_result != sq_root) 
@@ -49,7 +48,7 @@ endtask
 //generate a 50Mhz clock for testing the design.
 always #(Clock_period/2) Clock <= ~Clock;
 
-//Instantiate the matrix multiplier
+
 square_root #(.N(N)) find_sq_root 
         (.Clock(Clock), 
         .reset(reset), 
@@ -73,7 +72,7 @@ module square_root
     );
 
     reg [N-1:0] a;   //original input.
-    reg [N/2+1:0] left,right;     //input to adder/sub.r-remainder.
+    reg [N/2+1:0] left,right;    
     reg signed [N/2+1:0] r;
     reg [N/2-1:0] q;    //result.
     integer i;   //index of the loop. 
