@@ -1,4 +1,4 @@
-module tb;  //testbench module is always empty. No input or output ports.
+module tb;  
 
 reg Clock, reset;
 wire done;
@@ -9,8 +9,7 @@ wire [N/2-1:0] sq_root;
 integer error,actual_result;  //this indicates the number of errors encountered during simulation.
 parameter Clock_period = 10;    //Change clock period here. 
 
-//Apply the inputs to the design and check if the results are correct. 
-//The number of inputs for which the results were wrongly calculated are counted by 'error'. 
+ 
 initial
 begin
     Clock = 1;
