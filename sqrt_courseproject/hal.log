@@ -1,0 +1,993 @@
+hal(64): 15.20-s051: (c) Copyright 1995-2018 Cadence Design Systems, Inc.
+hal: Options:   -cdslib /home/adld27/sqrt/cds.lib -logfile hal.log worklib.tb:v.
+hal: Snapshot:  worklib.tb:v.
+hal: Workspace: /home/adld27/sqrt.
+hal: Date: Mon Apr 11 12:44:33 IST 2022.
+
+hal: Running on elaborated SNAPSHOT.....
+
+  ==========================================================================
+Performing lint checks 
+
+halcheck(64): 15.20-s051: (c) Copyright 1995-2018 Cadence Design Systems, Inc.
+visadev(64): 15.20-s051: (c) Copyright 1995-2018 Cadence Design Systems, Inc.
+module tb;  //testbench module is always empty. No input or output ports.
+|
+halcheck: *W,CTLCHR (./tb.v,1|0): HDL source line contains one or more control characters.
+
+|
+halcheck: *W,CTLCHR (./tb.v,2|0): HDL source line contains one or more control characters.
+reg Clock, reset;
+|
+halcheck: *W,CTLCHR (./tb.v,3|0): HDL source line contains one or more control characters.
+wire done;
+|
+halcheck: *W,CTLCHR (./tb.v,4|0): HDL source line contains one or more control characters.
+parameter N = 16;   //width of the input.
+|
+halcheck: *W,CTLCHR (./tb.v,5|0): HDL source line contains one or more control characters.
+reg [N-1:0] num_in;
+|
+halcheck: *W,CTLCHR (./tb.v,6|0): HDL source line contains one or more control characters.
+reg [N:0] i;
+|
+halcheck: *W,CTLCHR (./tb.v,7|0): HDL source line contains one or more control characters.
+wire [N/2-1:0] sq_root;
+|
+halcheck: *W,CTLCHR (./tb.v,8|0): HDL source line contains one or more control characters.
+integer error,actual_result;  //this indicates the number of errors encountered during simulation.
+|
+halcheck: *W,CTLCHR (./tb.v,9|0): HDL source line contains one or more control characters.
+integer error,actual_result;  //this indicates the number of errors encountered during simulation.
+|
+halcheck: *W,MAXLEN (./tb.v,9|0): The HDL source line is 99 characters, which exceeds the recommended length of 80 characters.
+parameter Clock_period = 10;    //Change clock period here. 
+|
+halcheck: *W,CTLCHR (./tb.v,10|0): HDL source line contains one or more control characters.
+
+|
+halcheck: *W,CTLCHR (./tb.v,11|0): HDL source line contains one or more control characters.
+//Apply the inputs to the design and check if the results are correct. 
+|
+halcheck: *W,CTLCHR (./tb.v,12|0): HDL source line contains one or more control characters.
+//The number of inputs for which the results were wrongly calculated are counted by 'error'. 
+|
+halcheck: *W,CTLCHR (./tb.v,13|0): HDL source line contains one or more control characters.
+//The number of inputs for which the results were wrongly calculated are counted by 'error'. 
+|
+halcheck: *W,MAXLEN (./tb.v,13|0): The HDL source line is 94 characters, which exceeds the recommended length of 80 characters.
+initial
+|
+halcheck: *W,CTLCHR (./tb.v,14|0): HDL source line contains one or more control characters.
+begin
+|
+halcheck: *W,CTLCHR (./tb.v,15|0): HDL source line contains one or more control characters.
+    Clock = 1;
+|
+halcheck: *W,CTLCHR (./tb.v,16|0): HDL source line contains one or more control characters.
+    error = 0;
+|
+halcheck: *W,CTLCHR (./tb.v,17|0): HDL source line contains one or more control characters.
+    i=1;
+|
+halcheck: *W,CTLCHR (./tb.v,18|0): HDL source line contains one or more control characters.
+    //First we apply reset input for one clock period.
+|
+halcheck: *W,CTLCHR (./tb.v,19|0): HDL source line contains one or more control characters.
+    reset = 1;
+|
+halcheck: *W,CTLCHR (./tb.v,20|0): HDL source line contains one or more control characters.
+    #Clock_period;
+|
+halcheck: *W,CTLCHR (./tb.v,21|0): HDL source line contains one or more control characters.
+    reset = 0;
+|
+halcheck: *W,CTLCHR (./tb.v,22|0): HDL source line contains one or more control characters.
+    //Test the design for all the combination of inputs.
+|
+halcheck: *W,CTLCHR (./tb.v,23|0): HDL source line contains one or more control characters.
+    //Since we have (2^16)-1 inputs, we test all of them one by one. 
+|
+halcheck: *W,CTLCHR (./tb.v,24|0): HDL source line contains one or more control characters.
+    while(i<=2**N-1) begin
+|
+halcheck: *W,CTLCHR (./tb.v,25|0): HDL source line contains one or more control characters.
+        apply_input(i);
+|
+halcheck: *W,CTLCHR (./tb.v,26|0): HDL source line contains one or more control characters.
+        i = i+1;    
+|
+halcheck: *W,CTLCHR (./tb.v,27|0): HDL source line contains one or more control characters.
+    end
+|
+halcheck: *W,CTLCHR (./tb.v,28|0): HDL source line contains one or more control characters.
+    #Clock_period;
+|
+halcheck: *W,CTLCHR (./tb.v,29|0): HDL source line contains one or more control characters.
+    reset = 1;   //all inputs are tested. Apply reset
+|
+halcheck: *W,CTLCHR (./tb.v,30|0): HDL source line contains one or more control characters.
+    num_in = 0;     //reset the 'num_in'
+|
+halcheck: *W,CTLCHR (./tb.v,31|0): HDL source line contains one or more control characters.
+    $stop;  //Stop the simulation, as we have finished testing the design.
+|
+halcheck: *W,CTLCHR (./tb.v,32|0): HDL source line contains one or more control characters.
+end
+|
+halcheck: *W,CTLCHR (./tb.v,33|0): HDL source line contains one or more control characters.
+
+|
+halcheck: *W,CTLCHR (./tb.v,34|0): HDL source line contains one or more control characters.
+task apply_input;
+|
+halcheck: *W,CTLCHR (./tb.v,35|0): HDL source line contains one or more control characters.
+    input [N:0] i;
+|
+halcheck: *W,CTLCHR (./tb.v,36|0): HDL source line contains one or more control characters.
+begin
+|
+halcheck: *W,CTLCHR (./tb.v,37|0): HDL source line contains one or more control characters.
+    num_in = i[N-1:0];  
+|
+halcheck: *W,CTLCHR (./tb.v,38|0): HDL source line contains one or more control characters.
+    wait(~done);    //wait for the 'done' to finish its previous high state
+|
+halcheck: *W,CTLCHR (./tb.v,39|0): HDL source line contains one or more control characters.
+    wait(done); //wait until 'done' output goes High.
+|
+halcheck: *W,CTLCHR (./tb.v,40|0): HDL source line contains one or more control characters.
+    wait(~Clock);   //we sample the output at the falling edge of the clock.
+|
+halcheck: *W,CTLCHR (./tb.v,41|0): HDL source line contains one or more control characters.
+    actual_result = $rtoi($floor($pow(i,0.5))); //Calculate the actual result.
+|
+halcheck: *W,CTLCHR (./tb.v,42|0): HDL source line contains one or more control characters.
+    //if actual result and calculated result are different increment 'error' by 1.
+|
+halcheck: *W,CTLCHR (./tb.v,43|0): HDL source line contains one or more control characters.
+    //if actual result and calculated result are different increment 'error' by 1.
+|
+halcheck: *W,MAXLEN (./tb.v,43|0): The HDL source line is 83 characters, which exceeds the recommended length of 80 characters.
+    if(actual_result != sq_root) 
+|
+halcheck: *W,CTLCHR (./tb.v,44|0): HDL source line contains one or more control characters.
+        error = error + 1; 
+|
+halcheck: *W,CTLCHR (./tb.v,45|0): HDL source line contains one or more control characters.
+end
+|
+halcheck: *W,CTLCHR (./tb.v,46|0): HDL source line contains one or more control characters.
+endtask
+|
+halcheck: *W,CTLCHR (./tb.v,47|0): HDL source line contains one or more control characters.
+
+|
+halcheck: *W,CTLCHR (./tb.v,48|0): HDL source line contains one or more control characters.
+//generate a 50Mhz clock for testing the design.
+|
+halcheck: *W,CTLCHR (./tb.v,49|0): HDL source line contains one or more control characters.
+always #(Clock_period/2) Clock <= ~Clock;
+|
+halcheck: *W,CTLCHR (./tb.v,50|0): HDL source line contains one or more control characters.
+
+|
+halcheck: *W,CTLCHR (./tb.v,51|0): HDL source line contains one or more control characters.
+//Instantiate the matrix multiplier
+|
+halcheck: *W,CTLCHR (./tb.v,52|0): HDL source line contains one or more control characters.
+square_root #(.N(N)) find_sq_root 
+|
+halcheck: *W,CTLCHR (./tb.v,53|0): HDL source line contains one or more control characters.
+        (.Clock(Clock), 
+|
+halcheck: *W,CTLCHR (./tb.v,54|0): HDL source line contains one or more control characters.
+        .reset(reset), 
+|
+halcheck: *W,CTLCHR (./tb.v,55|0): HDL source line contains one or more control characters.
+        .num_in(num_in), 
+|
+halcheck: *W,CTLCHR (./tb.v,56|0): HDL source line contains one or more control characters.
+        .done(done),
+|
+halcheck: *W,CTLCHR (./tb.v,57|0): HDL source line contains one or more control characters.
+        .sq_root(sq_root)
+|
+halcheck: *W,CTLCHR (./tb.v,58|0): HDL source line contains one or more control characters.
+        );
+|
+halcheck: *W,CTLCHR (./tb.v,59|0): HDL source line contains one or more control characters.
+
+|
+halcheck: *W,CTLCHR (./tb.v,60|0): HDL source line contains one or more control characters.
+module square_root
+|
+halcheck: *W,CTLCHR (./tb.v,66|0): HDL source line contains one or more control characters.
+    #(parameter N = 32)
+|
+halcheck: *W,CTLCHR (./tb.v,67|0): HDL source line contains one or more control characters.
+    (   input Clock,  //Clock
+|
+halcheck: *W,CTLCHR (./tb.v,68|0): HDL source line contains one or more control characters.
+        input reset,  //Asynchronous active high reset.      
+|
+halcheck: *W,CTLCHR (./tb.v,69|0): HDL source line contains one or more control characters.
+        input [N-1:0] num_in,   //this is the number for which we want to find square root.
+|
+halcheck: *W,CTLCHR (./tb.v,70|0): HDL source line contains one or more control characters.
+        input [N-1:0] num_in,   //this is the number for which we want to find square root.
+|
+halcheck: *W,MAXLEN (./tb.v,70|0): The HDL source line is 92 characters, which exceeds the recommended length of 80 characters.
+        output reg done,     //This signal goes high when output is ready
+|
+halcheck: *W,CTLCHR (./tb.v,71|0): HDL source line contains one or more control characters.
+        output reg [N/2-1:0] sq_root  //square root of 'num_in'
+|
+halcheck: *W,CTLCHR (./tb.v,72|0): HDL source line contains one or more control characters.
+    );
+|
+halcheck: *W,CTLCHR (./tb.v,73|0): HDL source line contains one or more control characters.
+
+|
+halcheck: *W,CTLCHR (./tb.v,74|0): HDL source line contains one or more control characters.
+    reg [N-1:0] a;   //original input.
+|
+halcheck: *W,CTLCHR (./tb.v,75|0): HDL source line contains one or more control characters.
+    reg [N/2+1:0] left,right;     //input to adder/sub.r-remainder.
+|
+halcheck: *W,CTLCHR (./tb.v,76|0): HDL source line contains one or more control characters.
+    reg signed [N/2+1:0] r;
+|
+halcheck: *W,CTLCHR (./tb.v,77|0): HDL source line contains one or more control characters.
+    reg [N/2-1:0] q;    //result.
+|
+halcheck: *W,CTLCHR (./tb.v,78|0): HDL source line contains one or more control characters.
+    integer i;   //index of the loop. 
+|
+halcheck: *W,CTLCHR (./tb.v,79|0): HDL source line contains one or more control characters.
+
+|
+halcheck: *W,CTLCHR (./tb.v,80|0): HDL source line contains one or more control characters.
+    always @(posedge Clock or posedge reset) 
+|
+halcheck: *W,CTLCHR (./tb.v,81|0): HDL source line contains one or more control characters.
+    begin
+|
+halcheck: *W,CTLCHR (./tb.v,82|0): HDL source line contains one or more control characters.
+        if (reset == 1) begin   //reset the variables.
+|
+halcheck: *W,CTLCHR (./tb.v,83|0): HDL source line contains one or more control characters.
+            done <= 0;
+|
+halcheck: *W,CTLCHR (./tb.v,84|0): HDL source line contains one or more control characters.
+            sq_root <= 0;
+|
+halcheck: *W,CTLCHR (./tb.v,85|0): HDL source line contains one or more control characters.
+            i = 0;
+|
+halcheck: *W,CTLCHR (./tb.v,86|0): HDL source line contains one or more control characters.
+            a = 0;
+|
+halcheck: *W,CTLCHR (./tb.v,87|0): HDL source line contains one or more control characters.
+            left = 0;
+|
+halcheck: *W,CTLCHR (./tb.v,88|0): HDL source line contains one or more control characters.
+            right = 0;
+|
+halcheck: *W,CTLCHR (./tb.v,89|0): HDL source line contains one or more control characters.
+            r = 0;
+|
+halcheck: *W,CTLCHR (./tb.v,90|0): HDL source line contains one or more control characters.
+            q = 0;
+|
+halcheck: *W,CTLCHR (./tb.v,91|0): HDL source line contains one or more control characters.
+        end    
+|
+halcheck: *W,CTLCHR (./tb.v,92|0): HDL source line contains one or more control characters.
+        else begin
+|
+halcheck: *W,CTLCHR (./tb.v,93|0): HDL source line contains one or more control characters.
+            //Before we start the first clock cycle get the 'input' to the variable 'a'.
+|
+halcheck: *W,CTLCHR (./tb.v,94|0): HDL source line contains one or more control characters.
+            //Before we start the first clock cycle get the 'input' to the variable 'a'.
+|
+halcheck: *W,MAXLEN (./tb.v,94|0): The HDL source line is 89 characters, which exceeds the recommended length of 80 characters.
+            if(i == 0) begin  
+|
+halcheck: *W,CTLCHR (./tb.v,95|0): HDL source line contains one or more control characters.
+                a = num_in;
+|
+halcheck: *W,CTLCHR (./tb.v,96|0): HDL source line contains one or more control characters.
+                done <= 0;    //reset 'done' signal.
+|
+halcheck: *W,CTLCHR (./tb.v,97|0): HDL source line contains one or more control characters.
+                i = i+1;   //increment the loop index.
+|
+halcheck: *W,CTLCHR (./tb.v,98|0): HDL source line contains one or more control characters.
+            end
+|
+halcheck: *W,CTLCHR (./tb.v,99|0): HDL source line contains one or more control characters.
+            else if(i < N/2) begin //keep incrementing the loop index.
+|
+halcheck: *W,CTLCHR (./tb.v,100|0): HDL source line contains one or more control characters.
+                i = i+1;  
+|
+halcheck: *W,CTLCHR (./tb.v,101|0): HDL source line contains one or more control characters.
+            end
+|
+halcheck: *W,CTLCHR (./tb.v,102|0): HDL source line contains one or more control characters.
+          
+|
+halcheck: *W,CTLCHR (./tb.v,103|0): HDL source line contains one or more control characters.
+            right = {q,r[N/2+1],1'b1};
+|
+halcheck: *W,CTLCHR (./tb.v,104|0): HDL source line contains one or more control characters.
+            left = {r[N/2-1:0], a[N-1:N-2]};
+|
+halcheck: *W,CTLCHR (./tb.v,105|0): HDL source line contains one or more control characters.
+            a = {a[N-3:0], 2'b0};  //shifting left by 2 bit.
+|
+halcheck: *W,CTLCHR (./tb.v,106|0): HDL source line contains one or more control characters.
+            a = {a[N-3:0], 2'b0};  //shifting left by 2 bit.
+|
+halcheck: *W,BITUNS (./tb.v,106|0): Not all bits of constant '2'b0' are explicitly specified.
+halcheck: (./tb.v,106): Constant extended by 1 bit to -> 2'b(0)0.
+            if ( r[N/2+1] == 1)    //add or subtract as per this bit.
+|
+halcheck: *W,CTLCHR (./tb.v,107|0): HDL source line contains one or more control characters.
+                r = left + right;
+|
+halcheck: *W,CTLCHR (./tb.v,108|0): HDL source line contains one or more control characters.
+            else
+|
+halcheck: *W,CTLCHR (./tb.v,109|0): HDL source line contains one or more control characters.
+                r = left - right;
+|
+halcheck: *W,CTLCHR (./tb.v,110|0): HDL source line contains one or more control characters.
+            q = {q[N/2-2:0], ~r[N/2+1]};
+|
+halcheck: *W,CTLCHR (./tb.v,111|0): HDL source line contains one or more control characters.
+            if(i == N/2) begin    //This means the max value of loop index has reached. 
+|
+halcheck: *W,CTLCHR (./tb.v,112|0): HDL source line contains one or more control characters.
+            if(i == N/2) begin    //This means the max value of loop index has reached. 
+|
+halcheck: *W,MAXLEN (./tb.v,112|0): The HDL source line is 89 characters, which exceeds the recommended length of 80 characters.
+                done <= 1;    //make 'done' high because output is ready.
+|
+halcheck: *W,CTLCHR (./tb.v,113|0): HDL source line contains one or more control characters.
+                i = 0; //reset loop index for beginning the next cycle.
+|
+halcheck: *W,CTLCHR (./tb.v,114|0): HDL source line contains one or more control characters.
+                sq_root <= q;   //assign 'q' to the output port.
+|
+halcheck: *W,CTLCHR (./tb.v,115|0): HDL source line contains one or more control characters.
+                //reset other signals for using in the next cycle.
+|
+halcheck: *W,CTLCHR (./tb.v,116|0): HDL source line contains one or more control characters.
+                left = 0;
+|
+halcheck: *W,CTLCHR (./tb.v,117|0): HDL source line contains one or more control characters.
+                right = 0;
+|
+halcheck: *W,CTLCHR (./tb.v,118|0): HDL source line contains one or more control characters.
+                r = 0;
+|
+halcheck: *W,CTLCHR (./tb.v,119|0): HDL source line contains one or more control characters.
+                q = 0;
+|
+halcheck: *W,CTLCHR (./tb.v,120|0): HDL source line contains one or more control characters.
+            end
+|
+halcheck: *W,CTLCHR (./tb.v,121|0): HDL source line contains one or more control characters.
+        end    
+|
+halcheck: *W,CTLCHR (./tb.v,122|0): HDL source line contains one or more control characters.
+    end
+|
+halcheck: *W,CTLCHR (./tb.v,123|0): HDL source line contains one or more control characters.
+
+|
+halcheck: *W,CTLCHR (./tb.v,124|0): HDL source line contains one or more control characters.
+module tb;  //testbench module is always empty. No input or output ports.
+|
+halcheck: *N,IDLENG (./tb.v,1|0): Identifier name 'tb' is not of appropriate length (4 to 16 characters).
+module tb;  //testbench module is always empty. No input or output ports.
+|
+halcheck: *W,NEEDIO (./tb.v,1|0): Top-level module 'tb' has no inputs/outputs/inouts.
+reg Clock, reset;
+|
+halcheck: *W,LCVARN (./tb.v,3|0): Register name 'Clock' uses uppercase characters.
+parameter N = 16;   //width of the input.
+|
+halcheck: *N,IDLENG (./tb.v,5|0): Identifier name 'N' is not of appropriate length (4 to 16 characters).
+parameter N = 16;   //width of the input.
+|
+halcheck: *W,PRMVAL (./tb.v,5|0): Bit width not specified for parameter 'N'.
+parameter N = 16;   //width of the input.
+|
+halcheck: *W,PRMBSE (./tb.v,5|0): Base not specified for parameter 'N'.
+parameter Clock_period = 10;    //Change clock period here. 
+|
+halcheck: *W,UCCONN (./tb.v,10|0): Lowercase characters used for identifier 'Clock_period'. Use uppercase characters for names of constants and user-defined types.
+parameter Clock_period = 10;    //Change clock period here. 
+|
+halcheck: *W,PRMVAL (./tb.v,10|0): Bit width not specified for parameter 'Clock_period'.
+parameter Clock_period = 10;    //Change clock period here. 
+|
+halcheck: *W,PRMBSE (./tb.v,10|0): Base not specified for parameter 'Clock_period'.
+begin
+|
+halcheck: *W,NOBLKN (./tb.v,15|0): Each block should be labeled with a meaningful name.
+    Clock = 1;
+|
+halcheck: *W,IMPDTC (./tb.v,16|0): Expression '1' implicitly converted to type 'unsigned' from type 'signed' in module/design-unit tb.
+    Clock = 1;
+|
+halcheck: *W,INTTOB (./tb.v,16|0): Assigning a 0 or 1 (32 bits) to a single-bit variable in module/design-unit tb.
+    Clock = 1;
+|
+halcheck: *W,TRUNCZ (./tb.v,16|0): Truncation in constant conversion without a loss of bits in module/design-unit tb.
+    i=1;
+|
+halcheck: *W,IMPDTC (./tb.v,18|0): Expression '1' implicitly converted to type 'unsigned' from type 'signed' in module/design-unit tb.
+    i=1;
+|
+halcheck: *W,TRUNCZ (./tb.v,18|0): Truncation in constant conversion without a loss of bits in module/design-unit tb.
+    reset = 1;
+|
+halcheck: *W,IMPDTC (./tb.v,20|0): Expression '1' implicitly converted to type 'unsigned' from type 'signed' in module/design-unit tb.
+    reset = 1;
+|
+halcheck: *W,INTTOB (./tb.v,20|0): Assigning a 0 or 1 (32 bits) to a single-bit variable in module/design-unit tb.
+    reset = 1;
+|
+halcheck: *W,TRUNCZ (./tb.v,20|0): Truncation in constant conversion without a loss of bits in module/design-unit tb.
+    #Clock_period;
+|
+halcheck: *W,EMPSTM (./tb.v,21|0): Module 'tb' contains an empty statement.
+    reset = 0;
+|
+halcheck: *W,IMPDTC (./tb.v,22|0): Expression '0' implicitly converted to type 'unsigned' from type 'signed' in module/design-unit tb.
+    reset = 0;
+|
+halcheck: *W,INTTOB (./tb.v,22|0): Assigning a 0 or 1 (32 bits) to a single-bit variable in module/design-unit tb.
+    reset = 0;
+|
+halcheck: *W,TRUNCZ (./tb.v,22|0): Truncation in constant conversion without a loss of bits in module/design-unit tb.
+    while(i<=2**N-1) begin
+|
+halcheck: *W,ULRELE (./tb.v,25|0): Unequal length operands in relational operator (padding produces incorrect result) in module/design-unit tb -- LHS operand is 17 bits, RHS operand is 32 bits.
+        i = i+1;    
+|
+halcheck: *W,IMPTYP (./tb.v,27|0): Expression 'i + 1' implicitly converted to type 'register' from type 'integer'.
+        i = i+1;    
+|
+halcheck: *W,POIASG (./tb.v,27|0): The result of addition operation may lead to a potential overflow in module/design-unit tb.
+halcheck: (./tb.v,27): LHS operand 'i' is 17 bit(s), RHS operand 'i + 1' is 32 bit(s).
+halcheck: (./tb.v,27): Increase the size of LHS by 15 bit(s).
+        i = i+1;    
+|
+halcheck: *W,UELOPR (./tb.v,27|0): Unequal length operand in bit/arithmetic operator PLUS in module/design-unit tb.
+halcheck: (./tb.v,27): LHS operand 'i' is 17 bits, RHS operand '1' is 32 bits.
+    #Clock_period;
+|
+halcheck: *W,EMPSTM (./tb.v,29|0): Module 'tb' contains an empty statement.
+    reset = 1;   //all inputs are tested. Apply reset
+|
+halcheck: *W,IMPDTC (./tb.v,30|0): Expression '1' implicitly converted to type 'unsigned' from type 'signed' in module/design-unit tb.
+    reset = 1;   //all inputs are tested. Apply reset
+|
+halcheck: *W,INTTOB (./tb.v,30|0): Assigning a 0 or 1 (32 bits) to a single-bit variable in module/design-unit tb.
+    reset = 1;   //all inputs are tested. Apply reset
+|
+halcheck: *W,TRUNCZ (./tb.v,30|0): Truncation in constant conversion without a loss of bits in module/design-unit tb.
+    num_in = 0;     //reset the 'num_in'
+|
+halcheck: *W,IMPDTC (./tb.v,31|0): Expression '0' implicitly converted to type 'unsigned' from type 'signed' in module/design-unit tb.
+    num_in = 0;     //reset the 'num_in'
+|
+halcheck: *W,TRUNCZ (./tb.v,31|0): Truncation in constant conversion without a loss of bits in module/design-unit tb.
+    $stop;  //Stop the simulation, as we have finished testing the design.
+|
+halcheck: *W,BADSYS (./tb.v,32|0): System task $stop in module 'tb' is ignored.
+always #(Clock_period/2) Clock <= ~Clock;
+|
+halcheck: *W,EVTRIG (./tb.v,50|0): Always block with no event trigger at the start of the block in module 'tb'.
+always #(Clock_period/2) Clock <= ~Clock;
+|
+halcheck: *W,NBGEND (./tb.v,50|0): Missing begin/end statement in the 'always' block.
+always #(Clock_period/2) Clock <= ~Clock;
+|
+halcheck: *W,SEPLIN (./tb.v,50|0): Use a separate line for each HDL statement.
+    wait(~done);    //wait for the 'done' to finish its previous high state
+|
+halcheck: *W,LOGNEG (./tb.v,39|0): Bit-wise negation in a conditional expression. Logical NOT may have been intended.
+    wait(~done);    //wait for the 'done' to finish its previous high state
+|
+halcheck: *W,EMPSTM (./tb.v,39|0): Module 'tb' contains an empty statement.
+    wait(done); //wait until 'done' output goes High.
+|
+halcheck: *W,EMPSTM (./tb.v,40|0): Module 'tb' contains an empty statement.
+    wait(~Clock);   //we sample the output at the falling edge of the clock.
+|
+halcheck: *W,LOGNEG (./tb.v,41|0): Bit-wise negation in a conditional expression. Logical NOT may have been intended.
+    wait(~Clock);   //we sample the output at the falling edge of the clock.
+|
+halcheck: *W,EMPSTM (./tb.v,41|0): Module 'tb' contains an empty statement.
+    actual_result = $rtoi($floor($pow(i,0.5))); //Calculate the actual result.
+|
+halcheck: *W,UEASTR (./tb.v,42|0): Unequal length operands in assignment in module/design-unit tb. Length of RHS is greater than LHS.
+halcheck: (./tb.v,42): LHS 'actual_result' (signed) - 32 bit(s), RHS '$rtoi($floor($pow(i,...' (unsigned) - 64 bit(s). 32 most significant bit(s) will be lost.
+    actual_result = $rtoi($floor($pow(i,0.5))); //Calculate the actual result.
+|
+halcheck: *W,BADSYS (./tb.v,42|0): System task $rtoi in module 'tb' is ignored.
+    if(actual_result != sq_root) 
+|
+halcheck: *W,NBGEND (./tb.v,44|0): Missing begin/end statement in the 'if' block.
+    if(actual_result != sq_root) 
+|
+halcheck: *W,LRGOPR (./tb.v,44|0): Arithmetic or relational operation performed on large operands in module/design-unit tb.
+    if(actual_result != sq_root) 
+|
+halcheck: *W,MXUANS (./tb.v,44|0): Expression 'actual_result !=...' in module/design-unit tb has both signed and unsigned variables/constants.
+halcheck: (./tb.v,44): Variable 'actual_result' is signed.
+halcheck: (./tb.v,44): Variable 'sq_root' is unsigned.
+    if(actual_result != sq_root) 
+|
+halcheck: *W,ULCMPE (./tb.v,44|0): Unequal length operands in equality operator encountered (padding produces incorrect result) in module/design-unit tb. LHS operand is 32 bits, RHS operand is 8 bits.
+    num_in = i[N-1:0];  
+|
+halcheck: *W,TSETGV (./tb.v,38|0): Task 'apply_input' in module 'tb' assigns a value to global variable 'num_in'.
+    wait(~done);    //wait for the 'done' to finish its previous high state
+|
+halcheck: *W,TUSEGV (./tb.v,39|0): Task 'apply_input' in module 'tb' uses global variable 'done'.
+    wait(done); //wait until 'done' output goes High.
+|
+halcheck: *W,TUSEGV (./tb.v,40|0): Task 'apply_input' in module 'tb' uses global variable 'done'.
+    wait(~Clock);   //we sample the output at the falling edge of the clock.
+|
+halcheck: *W,TUSEGV (./tb.v,41|0): Task 'apply_input' in module 'tb' uses global variable 'Clock'.
+    actual_result = $rtoi($floor($pow(i,0.5))); //Calculate the actual result.
+|
+halcheck: *W,TSETGV (./tb.v,42|0): Task 'apply_input' in module 'tb' assigns a value to global variable 'actual_result'.
+    if(actual_result != sq_root) 
+|
+halcheck: *W,TUSEGV (./tb.v,44|0): Task 'apply_input' in module 'tb' uses global variable 'actual_result'.
+    if(actual_result != sq_root) 
+|
+halcheck: *W,TUSEGV (./tb.v,44|0): Task 'apply_input' in module 'tb' uses global variable 'sq_root'.
+        error = error + 1; 
+|
+halcheck: *W,TSETGV (./tb.v,45|0): Task 'apply_input' in module 'tb' assigns a value to global variable 'error'.
+        error = error + 1; 
+|
+halcheck: *W,TUSEGV (./tb.v,45|0): Task 'apply_input' in module 'tb' uses global variable 'error'.
+module square_root
+|
+halcheck: *W,DIFFMN (./tb.v,66|0): Module name 'square_root' differs from file name 'tb.v'.
+module square_root
+|
+halcheck: *W,MULTMF (./tb.v,66|0): More than one design-unit definition in file 'tb.v'.
+module square_root
+|
+halcheck: *N,PRTCNT (./tb.v,66|0): Module/Entity 'square_root' contains '5' ports.
+halcheck: (./tb.v,66): Number of Input ports: 3.
+halcheck: (./tb.v,66): Number of Output ports: 2.
+    (   input Clock,  //Clock
+|
+halcheck: *W,LCVARN (./tb.v,68|0): Net name 'Clock' uses uppercase characters.
+    #(parameter N = 32)
+|
+halcheck: *N,IDLENG (./tb.v,67|0): Identifier name 'N' is not of appropriate length (4 to 16 characters).
+    #(parameter N = 32)
+|
+halcheck: *W,PRMVAL (./tb.v,67|0): Bit width not specified for parameter 'N'.
+    #(parameter N = 32)
+|
+halcheck: *W,PRMBSE (./tb.v,67|0): Base not specified for parameter 'N'.
+    begin
+|
+halcheck: *W,NOBLKN (./tb.v,82|0): Each block should be labeled with a meaningful name.
+        if (reset == 1) begin   //reset the variables.
+|
+halcheck: *W,ULCMPE (./tb.v,83|0): Unequal length operands in equality operator encountered (padding produces incorrect result) in module/design-unit find_sq_root. LHS operand is 1 bits, RHS operand is 32 bits.
+            done <= 0;
+|
+halcheck: *W,IMPDTC (./tb.v,84|0): Expression '0' implicitly converted to type 'unsigned' from type 'signed' in module/design-unit find_sq_root.
+            done <= 0;
+|
+halcheck: *W,INTTOB (./tb.v,84|0): Assigning a 0 or 1 (32 bits) to a single-bit variable in module/design-unit find_sq_root.
+            done <= 0;
+|
+halcheck: *W,TRUNCZ (./tb.v,84|0): Truncation in constant conversion without a loss of bits in module/design-unit find_sq_root.
+            sq_root <= 0;
+|
+halcheck: *W,IMPDTC (./tb.v,85|0): Expression '0' implicitly converted to type 'unsigned' from type 'signed' in module/design-unit find_sq_root.
+            sq_root <= 0;
+|
+halcheck: *W,TRUNCZ (./tb.v,85|0): Truncation in constant conversion without a loss of bits in module/design-unit find_sq_root.
+            i = 0;
+|
+halcheck: *W,BLKSQB (./tb.v,86|0): Blocking assignment encountered in a sequential block.
+            a = 0;
+|
+halcheck: *W,IMPDTC (./tb.v,87|0): Expression '0' implicitly converted to type 'unsigned' from type 'signed' in module/design-unit find_sq_root.
+            a = 0;
+|
+halcheck: *W,BLKSQB (./tb.v,87|0): Blocking assignment encountered in a sequential block.
+            a = 0;
+|
+halcheck: *W,TRUNCZ (./tb.v,87|0): Truncation in constant conversion without a loss of bits in module/design-unit find_sq_root.
+            left = 0;
+|
+halcheck: *W,IMPDTC (./tb.v,88|0): Expression '0' implicitly converted to type 'unsigned' from type 'signed' in module/design-unit find_sq_root.
+            left = 0;
+|
+halcheck: *W,BLKSQB (./tb.v,88|0): Blocking assignment encountered in a sequential block.
+            left = 0;
+|
+halcheck: *W,TRUNCZ (./tb.v,88|0): Truncation in constant conversion without a loss of bits in module/design-unit find_sq_root.
+            right = 0;
+|
+halcheck: *W,IMPDTC (./tb.v,89|0): Expression '0' implicitly converted to type 'unsigned' from type 'signed' in module/design-unit find_sq_root.
+            right = 0;
+|
+halcheck: *W,BLKSQB (./tb.v,89|0): Blocking assignment encountered in a sequential block.
+            right = 0;
+|
+halcheck: *W,TRUNCZ (./tb.v,89|0): Truncation in constant conversion without a loss of bits in module/design-unit find_sq_root.
+            r = 0;
+|
+halcheck: *W,IMPTYP (./tb.v,90|0): Expression '0' implicitly converted to type 'register' from type 'integer'.
+            r = 0;
+|
+halcheck: *W,BLKSQB (./tb.v,90|0): Blocking assignment encountered in a sequential block.
+            r = 0;
+|
+halcheck: *W,TRUNCZ (./tb.v,90|0): Truncation in constant conversion without a loss of bits in module/design-unit find_sq_root.
+            q = 0;
+|
+halcheck: *W,IMPDTC (./tb.v,91|0): Expression '0' implicitly converted to type 'unsigned' from type 'signed' in module/design-unit find_sq_root.
+            q = 0;
+|
+halcheck: *W,BLKSQB (./tb.v,91|0): Blocking assignment encountered in a sequential block.
+            q = 0;
+|
+halcheck: *W,TRUNCZ (./tb.v,91|0): Truncation in constant conversion without a loss of bits in module/design-unit find_sq_root.
+                a = num_in;
+|
+halcheck: *W,BLKSQB (./tb.v,96|0): Blocking assignment encountered in a sequential block.
+                done <= 0;    //reset 'done' signal.
+|
+halcheck: *W,IMPDTC (./tb.v,97|0): Expression '0' implicitly converted to type 'unsigned' from type 'signed' in module/design-unit find_sq_root.
+                done <= 0;    //reset 'done' signal.
+|
+halcheck: *W,INTTOB (./tb.v,97|0): Assigning a 0 or 1 (32 bits) to a single-bit variable in module/design-unit find_sq_root.
+                done <= 0;    //reset 'done' signal.
+|
+halcheck: *W,TRUNCZ (./tb.v,97|0): Truncation in constant conversion without a loss of bits in module/design-unit find_sq_root.
+                i = i+1;   //increment the loop index.
+|
+halcheck: *W,BLKSQB (./tb.v,98|0): Blocking assignment encountered in a sequential block.
+                i = i+1;  
+|
+halcheck: *W,BLKSQB (./tb.v,101|0): Blocking assignment encountered in a sequential block.
+            right = {q,r[N/2+1],1'b1};
+|
+halcheck: *W,BLKSQB (./tb.v,104|0): Blocking assignment encountered in a sequential block.
+            right = {q,r[N/2+1],1'b1};
+|
+halcheck: *W,RDBFAS (./tb.v,104|0): Register 'q', assigned using blocking assignment, is being read before getting assigned.
+            right = {q,r[N/2+1],1'b1};
+|
+halcheck: *W,RDBFAS (./tb.v,104|0): Register 'r', assigned using blocking assignment, is being read before getting assigned.
+            left = {r[N/2-1:0], a[N-1:N-2]};
+|
+halcheck: *W,BLKSQB (./tb.v,105|0): Blocking assignment encountered in a sequential block.
+            a = {a[N-3:0], 2'b0};  //shifting left by 2 bit.
+|
+halcheck: *W,BLKSQB (./tb.v,106|0): Blocking assignment encountered in a sequential block.
+            if ( r[N/2+1] == 1)    //add or subtract as per this bit.
+|
+halcheck: *W,NBGEND (./tb.v,107|0): Missing begin/end statement in the 'if' block.
+            if ( r[N/2+1] == 1)    //add or subtract as per this bit.
+|
+halcheck: *W,RDBFAS (./tb.v,107|0): Register 'r', assigned using blocking assignment, is being read before getting assigned.
+            if ( r[N/2+1] == 1)    //add or subtract as per this bit.
+|
+halcheck: *W,ULCMPE (./tb.v,107|0): Unequal length operands in equality operator encountered (padding produces incorrect result) in module/design-unit find_sq_root. LHS operand is 1 bits, RHS operand is 32 bits.
+                r = left + right;
+|
+halcheck: *W,IPUFSE (./tb.v,108|0): Expression 'left + right' implicitly converted to type 'signed' from type 'unsigned' in module/design-unit find_sq_root.
+                r = left + right;
+|
+halcheck: *W,BLKSQB (./tb.v,108|0): Blocking assignment encountered in a sequential block.
+                r = left + right;
+|
+halcheck: *W,POIASG (./tb.v,108|0): The result of addition operation may lead to a potential overflow in module/design-unit find_sq_root.
+halcheck: (./tb.v,108): LHS operand 'r' is 10 bit(s), RHS operand 'left + right' is 11 bit(s).
+halcheck: (./tb.v,108): Increase the size of LHS by 1 bit(s).
+                r = left + right;
+|
+halcheck: *W,LRGOPR (./tb.v,108|0): Arithmetic or relational operation performed on large operands in module/design-unit find_sq_root.
+                r = left - right;
+|
+halcheck: *W,IPUFSE (./tb.v,110|0): Expression 'left - right' implicitly converted to type 'signed' from type 'unsigned' in module/design-unit find_sq_root.
+                r = left - right;
+|
+halcheck: *W,BLKSQB (./tb.v,110|0): Blocking assignment encountered in a sequential block.
+                r = left - right;
+|
+halcheck: *W,LRGOPR (./tb.v,110|0): Arithmetic or relational operation performed on large operands in module/design-unit find_sq_root.
+            q = {q[N/2-2:0], ~r[N/2+1]};
+|
+halcheck: *W,BLKSQB (./tb.v,111|0): Blocking assignment encountered in a sequential block.
+                done <= 1;    //make 'done' high because output is ready.
+|
+halcheck: *W,IMPDTC (./tb.v,113|0): Expression '1' implicitly converted to type 'unsigned' from type 'signed' in module/design-unit find_sq_root.
+                done <= 1;    //make 'done' high because output is ready.
+|
+halcheck: *W,INTTOB (./tb.v,113|0): Assigning a 0 or 1 (32 bits) to a single-bit variable in module/design-unit find_sq_root.
+                done <= 1;    //make 'done' high because output is ready.
+|
+halcheck: *W,TRUNCZ (./tb.v,113|0): Truncation in constant conversion without a loss of bits in module/design-unit find_sq_root.
+                i = 0; //reset loop index for beginning the next cycle.
+|
+halcheck: *W,BLKSQB (./tb.v,114|0): Blocking assignment encountered in a sequential block.
+                left = 0;
+|
+halcheck: *W,IMPDTC (./tb.v,117|0): Expression '0' implicitly converted to type 'unsigned' from type 'signed' in module/design-unit find_sq_root.
+                left = 0;
+|
+halcheck: *W,BLKSQB (./tb.v,117|0): Blocking assignment encountered in a sequential block.
+                left = 0;
+|
+halcheck: *W,TRUNCZ (./tb.v,117|0): Truncation in constant conversion without a loss of bits in module/design-unit find_sq_root.
+                right = 0;
+|
+halcheck: *W,IMPDTC (./tb.v,118|0): Expression '0' implicitly converted to type 'unsigned' from type 'signed' in module/design-unit find_sq_root.
+                right = 0;
+|
+halcheck: *W,BLKSQB (./tb.v,118|0): Blocking assignment encountered in a sequential block.
+                right = 0;
+|
+halcheck: *W,TRUNCZ (./tb.v,118|0): Truncation in constant conversion without a loss of bits in module/design-unit find_sq_root.
+                r = 0;
+|
+halcheck: *W,IMPTYP (./tb.v,119|0): Expression '0' implicitly converted to type 'register' from type 'integer'.
+                r = 0;
+|
+halcheck: *W,BLKSQB (./tb.v,119|0): Blocking assignment encountered in a sequential block.
+                r = 0;
+|
+halcheck: *W,TRUNCZ (./tb.v,119|0): Truncation in constant conversion without a loss of bits in module/design-unit find_sq_root.
+                q = 0;
+|
+halcheck: *W,IMPDTC (./tb.v,120|0): Expression '0' implicitly converted to type 'unsigned' from type 'signed' in module/design-unit find_sq_root.
+                q = 0;
+|
+halcheck: *W,BLKSQB (./tb.v,120|0): Blocking assignment encountered in a sequential block.
+                q = 0;
+|
+halcheck: *W,TRUNCZ (./tb.v,120|0): Truncation in constant conversion without a loss of bits in module/design-unit find_sq_root.
+    reg signed [N/2+1:0] r;
+|
+halcheck: *W,URDREG (./tb.v,77|0): Local register variable 'r[8]' is not read, but is assigned at least once in module 'square_root'.
+halcheck: Total errors   = 0.
+halcheck: Total warnings = 247.
+
+  ==========================================================================
+Performing synthesizability checks 
+
+cfe64: 15.20.051-s(15.20.s051): (c) Copyright 1995 - 2018 Cadence Design Systems, Inc.
+cfe64 Build : Mon May  7 17:15:12 IST 2018 ldvopt246
+halsynth: Loading design snapshot....
+halsynth: Traversing design hierarchy....
+                done <= 0;    //reset 'done' signal.
+|
+halsynth: *W,MULNBA (./tb.v,97|0): In module 'square_root', register 'done' has multiple non-blocking assignments.
+                done <= 1;    //make 'done' high because output is ready.
+|
+halsynth: (./tb.v,113|0): Source HDL information for the error/warning mentioned above.
+initial
+|
+halsynth: *W,INIUSP (./tb.v,14|0): Module tb has an initial block or a variable declaration assignment, which is ignored by synthesis tools.
+always #(Clock_period/2) Clock <= ~Clock;
+|
+halsynth: *E,AWNDEL (./tb.v,50|0): Always block with no event trigger at the start in module tb.
+halsynth: *W,COMBLP: In module tb, combinational loop detected for node Clock.
+always #(Clock_period/2) Clock <= ~Clock;
+|
+halsynth: (./tb.v,50|0): Source HDL information for the error/warning mentioned above.
+always #(Clock_period/2) Clock <= ~Clock;
+|
+halsynth: *W,NBCOMB (./tb.v,50|0): Non-blocking assignment encountered in a combinational block.
+always #(Clock_period/2) Clock <= ~Clock;
+|
+halsynth: (./tb.v,50|0): Source HDL information for the error/warning mentioned above.
+always #(Clock_period/2) Clock <= ~Clock;
+|
+halsynth: *W,IGNDLY (./tb.v,50|0): Lumped delay in module 'tb' is ignored.
+halsynth: Total errors   = 1.
+halsynth: Total warnings = 5.
+
+  ==========================================================================
+Performing structural checks 
+
+halstruct(64): 15.20-s051: (c) Copyright 1995-2018 Cadence Design Systems, Inc.
+visadev(64): 15.20-s051: (c) Copyright 1995-2018 Cadence Design Systems, Inc.
+reg Clock, reset;
+|
+halstruct: *E,CMBPAU (./tb.v,3|0): Combinational loop detected through 'Clock' in module/design-unit 'tb'.
+halstruct: (./tb.v,50): tb.Clock.
+square_root #(.N(N)) find_sq_root 
+|
+halstruct: *E,UNCONI (./tb.v,53|0): Input port 'reset' of entity/module 'square_root' is being used inside architecture/module, but not connected (either partially or completely) in its instance 'tb.find_sq_root'.
+halstruct: (./tb.v,53): 'reset' mapped to actual expression 'reset' which is undriven.
+square_root #(.N(N)) find_sq_root 
+|
+halstruct: *E,UNCONI (./tb.v,53|0): Input port 'num_in' of entity/module 'square_root' is being used inside architecture/module, but not connected (either partially or completely) in its instance 'tb.find_sq_root'.
+halstruct: (./tb.v,53): 'num_in[15:14]' mapped to actual expression 'num_in' which is undriven.
+halstruct: (./tb.v,53): 'num_in[13:0]' mapped to actual expression 'num_in' which is undriven.
+square_root #(.N(N)) find_sq_root 
+|
+halstruct: *W,UNCONO (./tb.v,53|0): Port 'done' (which is being used as an output) of entity/module 'square_root' is being driven inside the design, but not connected (either partially or completely) in its instance 'tb.find_sq_root'.
+square_root #(.N(N)) find_sq_root 
+|
+halstruct: *W,UNCONO (./tb.v,53|0): Port 'sq_root' (which is being used as an output) of entity/module 'square_root' is being driven inside the design, but not connected (either partially or completely) in its instance 'tb.find_sq_root'.
+                i = i+1;  
+|
+halstruct: *W,ASNRST (./tb.v,101|0): Flip-flop 'tb.find_sq_root.i' has 'active_high' asynchronous set/reset 'reset' as against the recommended 'active_low' style.
+                i = i+1;  
+|
+halstruct: *N,FFASRT (./tb.v,101|0): Flip-flop 'i' has an asynchronous reset 'reset'.
+reg Clock, reset;
+|
+halstruct: *N,CLKINF (./tb.v,3|0): Signal 'tb.Clock' was inferred as clock.
+halstruct: (./tb.v,3): Clock source is signal 'tb.Clock'.
+halstruct: (./tb.v,101): Drives the flip-flop 'tb.find_sq_root.i'.
+                i = i+1;  
+|
+halstruct: *W,ACNCPI (./tb.v,101|0): Asynchronous reset 'reset' of latch/flip-flop 'tb.find_sq_root.i' is not controllable from primary inputs.
+                i = i+1;  
+|
+halstruct: *W,CLKNPI (./tb.v,101|0): Flip-flop 'tb.find_sq_root.i' has clock 'Clock' which is not derived from primary input.
+halstruct: (./tb.v,50): Derived from local variable 'Clock'.
+                i = i+1;  
+|
+halstruct: *W,NEGCLK (./tb.v,101|0): Clock signal 'tb.Clock' of flip-flop 'tb.find_sq_root.i' is derived from an inverter.
+            a = 0;
+|
+halstruct: *W,ASNRST (./tb.v,87|0): Flip-flop 'tb.find_sq_root.a[1:0]' has 'active_high' asynchronous set/reset 'reset' as against the recommended 'active_low' style.
+            a = 0;
+|
+halstruct: *N,FFASRT (./tb.v,87|0): Flip-flop 'a[1:0]' has an asynchronous reset 'reset'.
+            a = 0;
+|
+halstruct: *W,FFCSTD (./tb.v,87|0): Inferred flip-flop 'a[1:0]' has a constant data input.
+            a = 0;
+|
+halstruct: *W,NEGCLK (./tb.v,87|0): Clock signal 'tb.Clock' of flip-flop 'tb.find_sq_root.a[1:0]' is derived from an inverter.
+            a = {a[N-3:0], 2'b0};  //shifting left by 2 bit.
+|
+halstruct: *W,ASNRST (./tb.v,106|0): Flip-flop 'tb.find_sq_root.a[15:2]' has 'active_high' asynchronous set/reset 'reset' as against the recommended 'active_low' style.
+            a = {a[N-3:0], 2'b0};  //shifting left by 2 bit.
+|
+halstruct: *N,FFASRT (./tb.v,106|0): Flip-flop 'a[15:2]' has an asynchronous reset 'reset'.
+            a = {a[N-3:0], 2'b0};  //shifting left by 2 bit.
+|
+halstruct: *W,NEGCLK (./tb.v,106|0): Clock signal 'tb.Clock' of flip-flop 'tb.find_sq_root.a[15:2]' is derived from an inverter.
+            left = {r[N/2-1:0], a[N-1:N-2]};
+|
+halstruct: *N,INFNOT (./tb.v,105|0): Ignoring flipflop 'left[1:0]' with no fanout to module/design-unit outputs or child instances.
+            left = {r[N/2-1:0], a[N-1:N-2]};
+|
+halstruct: *N,INFNOT (./tb.v,105|0): Ignoring flipflop 'left[9:2]' with no fanout to module/design-unit outputs or child instances.
+            right = {q,r[N/2+1],1'b1};
+|
+halstruct: *N,INFNOT (./tb.v,104|0): Ignoring flipflop 'right[0]' with no fanout to module/design-unit outputs or child instances.
+            right = {q,r[N/2+1],1'b1};
+|
+halstruct: *N,INFNOT (./tb.v,104|0): Ignoring flipflop 'right[1]' with no fanout to module/design-unit outputs or child instances.
+            right = {q,r[N/2+1],1'b1};
+|
+halstruct: *N,INFNOT (./tb.v,104|0): Ignoring flipflop 'right[9:2]' with no fanout to module/design-unit outputs or child instances.
+                r = left - right;
+|
+halstruct: *W,ASNRST (./tb.v,110|0): Flip-flop 'tb.find_sq_root.r' has 'active_high' asynchronous set/reset 'reset' as against the recommended 'active_low' style.
+                r = left - right;
+|
+halstruct: *N,FFASRT (./tb.v,110|0): Flip-flop 'r' has an asynchronous reset 'reset'.
+                r = left - right;
+|
+halstruct: *W,NEGCLK (./tb.v,110|0): Clock signal 'tb.Clock' of flip-flop 'tb.find_sq_root.r' is derived from an inverter.
+            q = {q[N/2-2:0], ~r[N/2+1]};
+|
+halstruct: *W,ASNRST (./tb.v,111|0): Flip-flop 'tb.find_sq_root.q[0]' has 'active_high' asynchronous set/reset 'reset' as against the recommended 'active_low' style.
+            q = {q[N/2-2:0], ~r[N/2+1]};
+|
+halstruct: *N,FFASRT (./tb.v,111|0): Flip-flop 'q[0]' has an asynchronous reset 'reset'.
+            q = {q[N/2-2:0], ~r[N/2+1]};
+|
+halstruct: *W,NEGCLK (./tb.v,111|0): Clock signal 'tb.Clock' of flip-flop 'tb.find_sq_root.q[0]' is derived from an inverter.
+            q = {q[N/2-2:0], ~r[N/2+1]};
+|
+halstruct: *W,ASNRST (./tb.v,111|0): Flip-flop 'tb.find_sq_root.q[7:1]' has 'active_high' asynchronous set/reset 'reset' as against the recommended 'active_low' style.
+            q = {q[N/2-2:0], ~r[N/2+1]};
+|
+halstruct: *N,FFASRT (./tb.v,111|0): Flip-flop 'q[7:1]' has an asynchronous reset 'reset'.
+            q = {q[N/2-2:0], ~r[N/2+1]};
+|
+halstruct: *W,NEGCLK (./tb.v,111|0): Clock signal 'tb.Clock' of flip-flop 'tb.find_sq_root.q[7:1]' is derived from an inverter.
+                done <= 0;    //reset 'done' signal.
+|
+halstruct: *W,ASNRST (./tb.v,97|0): Flip-flop 'tb.find_sq_root.done' has 'active_high' asynchronous set/reset 'reset' as against the recommended 'active_low' style.
+                done <= 0;    //reset 'done' signal.
+|
+halstruct: *N,FFASRT (./tb.v,97|0): Flip-flop 'done' has an asynchronous reset 'reset'.
+                done <= 0;    //reset 'done' signal.
+|
+halstruct: *W,NEGCLK (./tb.v,97|0): Clock signal 'tb.Clock' of flip-flop 'tb.find_sq_root.done' is derived from an inverter.
+                sq_root <= q;   //assign 'q' to the output port.
+|
+halstruct: *W,ASNRST (./tb.v,115|0): Flip-flop 'tb.find_sq_root.sq_root[0]' has 'active_high' asynchronous set/reset 'reset' as against the recommended 'active_low' style.
+                sq_root <= q;   //assign 'q' to the output port.
+|
+halstruct: *N,FFASRT (./tb.v,115|0): Flip-flop 'sq_root[0]' has an asynchronous reset 'reset'.
+                sq_root <= q;   //assign 'q' to the output port.
+|
+halstruct: *W,NEGCLK (./tb.v,115|0): Clock signal 'tb.Clock' of flip-flop 'tb.find_sq_root.sq_root[0]' is derived from an inverter.
+                sq_root <= q;   //assign 'q' to the output port.
+|
+halstruct: *W,ASNRST (./tb.v,115|0): Flip-flop 'tb.find_sq_root.sq_root[7:1]' has 'active_high' asynchronous set/reset 'reset' as against the recommended 'active_low' style.
+                sq_root <= q;   //assign 'q' to the output port.
+|
+halstruct: *N,FFASRT (./tb.v,115|0): Flip-flop 'sq_root[7:1]' has an asynchronous reset 'reset'.
+                sq_root <= q;   //assign 'q' to the output port.
+|
+halstruct: *W,NEGCLK (./tb.v,115|0): Clock signal 'tb.Clock' of flip-flop 'tb.find_sq_root.sq_root[7:1]' is derived from an inverter.
+module tb;  //testbench module is always empty. No input or output ports.
+|
+halstruct: *W,ATLGLC (./tb.v,1|0): Glue logic inferred in top-level module/design-unit 'tb'.
+halstruct: (./tb.v,50): HDL-statement inferred as glue logic.
+module tb;  //testbench module is always empty. No input or output ports.
+|
+halstruct: *N,NUMDFF (./tb.v,1|0): Number of single-bit D flip-flops present in the hierarchy is 75.
+halstruct: Design facts generated in 'hal.design_facts'.
+halstruct: Total errors   = 3.
+halstruct: Total warnings = 24.
+
+  ==========================================================================
+
+Analysis summary :
+
+ Errors   : (4)
+  AWNDEL (1)      CMBPAU (1)      UNCONI (2)     
+
+ Warnings : (276)
+  ACNCPI (1)      ASNRST (9)      ATLGLC (1)      BADSYS (2)     
+  BITUNS (1)      BLKSQB (20)     CLKNPI (1)      COMBLP (1)     
+  CTLCHR (119)    DIFFMN (1)      EMPSTM (5)      EVTRIG (1)     
+  FFCSTD (1)      IGNDLY (1)      IMPDTC (17)     IMPTYP (3)     
+  INIUSP (1)      INTTOB (7)      IPUFSE (2)      LCVARN (2)     
+  LOGNEG (2)      LRGOPR (3)      MAXLEN (6)      MULNBA (1)     
+  MULTMF (1)      MXUANS (1)      NBCOMB (1)      NBGEND (3)     
+  NEEDIO (1)      NEGCLK (9)      NOBLKN (2)      POIASG (2)     
+  PRMBSE (3)      PRMVAL (3)      RDBFAS (3)      SEPLIN (1)     
+  TRUNCZ (19)     TSETGV (3)      TUSEGV (6)      UCCONN (1)     
+  UEASTR (1)      UELOPR (1)      ULCMPE (3)      ULRELE (1)     
+  UNCONO (2)      URDREG (1)     
+
+ Notes    : (20)
+  CLKINF (1)      FFASRT (9)      IDLENG (3)      INFNOT (5)     
+  NUMDFF (1)      PRTCNT (1)     
+
+Analysis complete.
+
+ ==========================================================================
+
+To analyze results, run following command :
+    ncbrowse -64bit -cdslib /home/adld27/sqrt/cds.lib -sortby severity -sortby category -sortby tag hal.log
+
